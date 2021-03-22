@@ -98,22 +98,14 @@
                 </div>
                 
                 <!-- INTERVENTIONS -->
-                <form enctype=multipart/form-data id="intervention" action="/interventions" method="post">
+                <%= form_with do |f| %>
                     <fieldset>
                         <div class="col-md-4">
-                            <label for="customer">Customer</label>
-							<select class="form-control pointer" name="department" id="department">
-							    <option value="">--- Select ---</option>
-								<option value="Corporate">Corporate Buildings</option>
-								<option value="Residential">Residential Buildings</option>
-								<option value="Residential">Sales</option>
-								<option value="Maintenance">Maintenance</option>
-								<option value="Maintenance">Administration</option>
-								<option value="Maintenance">General</option>
-							</select>
+                            <%= f.label :customer %>
+                            <%= collection_select( :intervention, :customer_id, Customer.all, :id, :full_name_company_contact, {}, { :multiple => false }) %>
                         </div>
                     </fieldset>
-                </form>
+                <% end %>
                 <!-- INTERVENTIONS -->
                 
             </section>
