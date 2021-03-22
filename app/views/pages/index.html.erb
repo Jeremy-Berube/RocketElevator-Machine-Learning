@@ -43,7 +43,7 @@
                                 <%= link_to "CONTACT",root_path(:anchor => "contact") %>
                             </li>
 							<li><!-- INTERVENTIONS -->
-                                <%= link_to "INTERVENTIONS" %>
+                                <%= link_to "INTERVENTIONS", pages_intervention_url %>
                             </li>
 							<% if user_signed_in? && current_user.supervisor_role? %>
 								<li><!-- LOGOUT -->
