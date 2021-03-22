@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'pages/quote'# => 'application#quotes'
   #post 'create' => 'application#create'
   get 'pages/intervention'
+  resources :interventions
   resources :quotes
   # authenticate :user, lamdba {|u| u.role == "admin"} do
   #   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
