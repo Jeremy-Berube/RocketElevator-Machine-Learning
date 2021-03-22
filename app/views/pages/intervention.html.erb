@@ -99,12 +99,12 @@
                     <fieldset>
                         <div id="customer" class="col-md-4">
                             <%= f.label :customer %>
-                            <%= collection_select( :intervention, :customer_id, Customer.all, :id, :full_name_company_contact, {}, { :multiple => false }) %>
+                            <%= customer = collection_select( :intervention, :customer_id, Customer.all, :id, :full_name_company_contact, {}, { :multiple => false }) %>
                         </div>
                         <br>
-                        <div id="test" class="col-md-4">
-                            <%= f.label :test %>
-                            <%= collection_select( :intervention, "test", Customer.all, :id, :full_name_company_contact, {}, { :multiple => false }) %>
+                        <div id="building" class="col-md-4">
+                            <%= f.label :building %>
+                            <%= collection_select( :intervention, "building", customer.building.all, :id, :address_building, {}, { :multiple => false }) %>
                         </div>
                     </fieldset>
                 <% end %>
