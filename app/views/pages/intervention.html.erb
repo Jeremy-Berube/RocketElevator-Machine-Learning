@@ -92,17 +92,19 @@
                     <div id="steps-to-quote" class="heading-title heading-dotted text-center">
 						<h2>Intervention form</h2>
                     </div>
-                    <div id="quote-results"class="heading-title heading-dotted text-center quote-results">
-                        <h2>Results of Quote Request</h2>
-                    </div>
                 </div>
                 
                 <!-- INTERVENTIONS -->
                 <%= form_with do |f| %>
                     <fieldset>
-                        <div class="col-md-4">
+                        <div id="customer" class="col-md-4">
                             <%= f.label :customer %>
                             <%= collection_select( :intervention, :customer_id, Customer.all, :id, :full_name_company_contact, {}, { :multiple => false }) %>
+                        </div>
+                        <br>
+                        <div id="test" class="col-md-4">
+                            <%= f.label :test %>
+                            <%= collection_select( :intervention, "test", Customer.all, :id, :full_name_company_contact, {}, { :multiple => false }) %>
                         </div>
                     </fieldset>
                 <% end %>
@@ -163,15 +165,8 @@
 		<!-- SCROLL TO TOP -->
 		<a href="#" id="toTop"></a>
 
-
-        
-
         <script>
-            hideQuestions();
-            showRelevantQuestions();
-            elevatorsRequired();
-            requestQuote();
-            quoteAgain();
-            calculUpdate();
-            sendQuote();
+            // $(()=>{
+            //     $("#test").hide();
+            // })
         </script>
