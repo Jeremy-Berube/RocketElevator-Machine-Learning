@@ -1,0 +1,32 @@
+
+
+$(()=>{
+
+    let building = $("#building").html();
+    $("#building").hide();
+
+    $("#customer_id").change(function(){
+       $("#building").show(); 
+        let customer = $(this).val();
+
+        $.ajax({
+            url: "/update_buildings",
+            method: "GET",
+            data: {customer_id: customer},
+            dataType: "json",
+            success: function (response) {
+                console.log("Response: ", response);
+                // console.log(customer);
+                $("#building_id").empty();
+                $("#building_id").append("<option>-- LOOK AT THIS DUUUUDE --</option>");
+
+                    // $("#building_id").append("<option>")
+                for (let i = 0; i < response['buildings'].length; i++) {
+                    $("#building_id").append("<option value="+ response['buildings'][i].id +">"+ response['buildings'][i].address_building +"</option>");
+                }
+            }
+        })
+
+    })
+
+})

@@ -104,7 +104,7 @@
                         <br>
                         <div id="building" class="col-md-4">
                             <%= f.label :building %>
-                            <%= f.grouped_collection_select :building_id, Customer.all, :buildings, :id, :id, :address_building, include_blank: true %>
+                            <%= f.collection_select :building_id, Building.all, :id, :id, include_blank: true %>
                         </div>
                         <br>
                         <div id="battery" class="col-md-4">

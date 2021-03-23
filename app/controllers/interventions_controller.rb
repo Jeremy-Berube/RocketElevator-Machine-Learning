@@ -1,7 +1,10 @@
-class InterventionController < ApplicationController
+class InterventionsController < ApplicationController
 
-    def customer
-       
+    def update_buildings
+
+        @buildingList = Building.where(customer_id: params[:customer_id])
+        render json: {buildings: @buildingList}
+        
     end
 
     def building_search

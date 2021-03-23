@@ -11,17 +11,21 @@ Rails.application.routes.draw do
   get 'pages/quote'
   
   get 'pages/intervention'
-  resources :interventions
   resources :quotes
   
   resources :leads
   post '/leads', to: 'leads#create'
-
-  get 'dropbox/auth_callback' => 'dropbox#auth_callback'
-
-  get 'customer', to: 'intervention#customer'
   
-  post 'intervention', to: 'intervention#create'
+  get 'dropbox/auth_callback' => 'dropbox#auth_callback'
+  
+  post 'interventions', to: 'interventions#create'
+  
+  resources :interventions 
+  
+  get 'update_buildings', to: 'interventions#update_buildings'
+  
+    
+  
 
 
 end
