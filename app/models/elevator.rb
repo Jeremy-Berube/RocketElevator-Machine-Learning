@@ -1,5 +1,7 @@
 class Elevator < ApplicationRecord
     belongs_to :column , foreign_key: "column_id"
+    has_many :interventions
+    
     after_update :contact_tech
 
     def contact_tech

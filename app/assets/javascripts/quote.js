@@ -121,13 +121,6 @@ function requestQuote () {
         function numberWithCommas(x) {
             return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
         }
-
-        // console.log("elevator amount: " + $elevatorAmount);
-        // console.log("unit price: " + elevatorUnitPrice);
-        // console.log("installlation rate: " + $installationRate);
-        // console.log("elevator total price: " + elevatorTotalPrice);
-        // console.log("installation fees: " + installationFees);
-        // console.log("final price: " + finalPrice);
         
         $("#input-elevator-unit-price").text("$CAD " + elevatorUnitPrice);
         $("#input-elevator-total-price").text("$CAD " + elevatorTotalPrice);
@@ -162,22 +155,7 @@ function quoteAgain () {
         requestQuote();
     });
 };
-//"#step3-options-1, #step3-options-2, #step3-options-3"
-//$0.checked=false
-// this.checked = false;
-//<input type=button value="Uncheck" onclick="document.getElementById('foo').checked = false">
-/*$(document).on("click", "input[name='radioBtn']", function(){
-    thisRadio = $(this);
-    if (thisRadio.hasClass("imChecked")) {
-        thisRadio.removeClass("imChecked");
-        thisRadio.prop('checked', false);
-    } else { 
-        thisRadio.prop('checked', true);
-        thisRadio.addClass("imChecked");
-    };
 
-    <textarea id="input-elevator-total-price">$CAD 121,040.00</textarea>
-})*/
 function calculUpdate() {
     $("#step3-options-1, #step3-options-2, #step3-options-3").on("change, keyUp", function()  {
         //console.log("hello----------------------------------------");

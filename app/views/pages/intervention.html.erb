@@ -95,17 +95,34 @@
                 </div>
                 
                 <!-- INTERVENTIONS -->
-                <%= form_with do |f| %>
+                <%= form_with(model: @intervention) do |f| %>
                     <fieldset>
                         <div id="customer" class="col-md-4">
                             <%= f.label :customer %>
-                            <%= customer = collection_select( :intervention, :customer_id, Customer.all, :id, :full_name_company_contact, {}, { :multiple => false }) %>
+                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, include_blank: true %>
                         </div>
                         <br>
                         <div id="building" class="col-md-4">
                             <%= f.label :building %>
-                            <%= collection_select( :intervention, "building", customer.building.all, :id, :address_building, {}, { :multiple => false }) %>
+                            <%= f.grouped_collection_select :building_id, Customer.all, :buildings, :id, :id, :address_building, include_blank: true %>
                         </div>
+                        <br>
+                        <div id="battery" class="col-md-4">
+                            <%= f.label :battery %>
+                            <%= f.grouped_collection_select :battery_id, Building.all, :batteries, :id, :id, :id, include_blank: true %>
+                        </div>
+                        <br>
+                        <div id="column" class="col-md-4">
+                            <%= f.label :column %>
+                            <%= f.grouped_collection_select :column_id, Battery.all, :columns, :id, :id, :id, include_blank: true %>
+                        </div>
+                        <br>
+                        <div id="elevator" class="col-md-4">
+                            <%= f.label :elevator %>
+                            <%= f.grouped_collection_select :elevator_id, Column.all, :elevators, :id, :id, :id, include_blank: true %>
+                        </div>
+                        <br>
+                        <%= f.submit %>
                     </fieldset>
                 <% end %>
                 <!-- INTERVENTIONS -->
