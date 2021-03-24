@@ -18,11 +18,14 @@ Rails.application.routes.draw do
   
   get 'dropbox/auth_callback' => 'dropbox#auth_callback'
   
-  post 'interventions', to: 'interventions#create'
+  
   
   resources :interventions 
-  
+  post '/interventions', to: 'interventions#create'
   get 'update_buildings', to: 'interventions#update_buildings'
+  get 'update_battery', to: 'interventions#update_battery'
+  get 'update_column', to: 'interventions#update_column'
+  get 'update_elevator', to: 'interventions#update_elevator'
   
     
   

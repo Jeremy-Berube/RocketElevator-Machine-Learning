@@ -4,6 +4,9 @@ $(()=>{
 
     let building = $("#building").html();
     $("#building").hide();
+    $("#battery").hide();
+    $("#column").hide();
+    $("#elevator").hide();
 
     $("#customer_id").change(function(){
        $("#building").show(); 
@@ -23,6 +26,81 @@ $(()=>{
                     // $("#building_id").append("<option>")
                 for (let i = 0; i < response['buildings'].length; i++) {
                     $("#building_id").append("<option value="+ response['buildings'][i].id +">"+ response['buildings'][i].address_building +"</option>");
+                }
+            }
+        })
+
+    })
+
+    $("#building_id").change(function(){
+       $("#battery").show(); 
+        let building = $(this).val();
+
+        $.ajax({
+            url: "/update_battery",
+            method: "GET",
+            data: {building_id: building},
+            dataType: "json",
+            success: function (response) {
+                console.log("Response: ", response);
+                // console.log(customer);
+                $("#battery_id").empty();
+                $("#battery_id").append("<option>-- LOOK AT THIS DUUUUDE --</option>");
+
+                    // $("#building_id").append("<option>")
+                for (let i = 0; i < response['batteries'].length; i++) {
+                    $("#battery_id").append("<option value="+ response['batteries'][i].id +">"+ response['batteries'][i].id +"</option>");
+                    console.log("bruh")
+                }
+            }
+        })
+
+    })
+
+    $("#battery_id").change(function(){
+       $("#column").show(); 
+        let battery = $(this).val();
+
+        $.ajax({
+            url: "/update_column",
+            method: "GET",
+            data: {battery_id: battery},
+            dataType: "json",
+            success: function (response) {
+                console.log("Response: ", response);
+                // console.log(customer);
+                $("#column_id").empty();
+                $("#column_id").append("<option>-- LOOK AT THIS DUUUUDE --</option>");
+
+                    // $("#building_id").append("<option>")
+                for (let i = 0; i < response['columns'].length; i++) {
+                    $("#column_id").append("<option value="+ response['columns'][i].id +">"+ response['columns'][i].id +"</option>");
+                    console.log("bruh")
+                }
+            }
+        })
+
+    })
+
+    $("#column_id").change(function(){
+       $("#elevator").show(); 
+        let column = $(this).val();
+
+        $.ajax({
+            url: "/update_elevator",
+            method: "GET",
+            data: {column_id: column},
+            dataType: "json",
+            success: function (response) {
+                console.log("Response: ", response);
+                // console.log(customer);
+                $("#elevator_id").empty();
+                $("#elevator_id").append("<option>-- LOOK AT THIS DUUUUDE --</option>");
+
+                    // $("#building_id").append("<option>")
+                for (let i = 0; i < response['elevators'].length; i++) {
+                    $("#elevator_id").append("<option value="+ response['elevators'][i].id +">"+ response['elevators'][i].id +"</option>");
+                    console.log("bruh")
                 }
             }
         })

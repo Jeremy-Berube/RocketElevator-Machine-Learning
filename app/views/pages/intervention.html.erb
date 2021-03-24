@@ -109,20 +109,32 @@
                         <br>
                         <div id="battery" class="col-md-4">
                             <%= f.label :battery %>
-                            <%= f.grouped_collection_select :battery_id, Building.all, :batteries, :id, :id, :id, include_blank: true %>
+                            <%= f.collection_select :battery_id, Battery.all, :id, :id, include_blank: true %>
                         </div>
                         <br>
                         <div id="column" class="col-md-4">
                             <%= f.label :column %>
-                            <%= f.grouped_collection_select :column_id, Battery.all, :columns, :id, :id, :id, include_blank: true %>
+                            <%= f.collection_select :column_id, Column.all, :id, :id, include_blank: true %>
                         </div>
                         <br>
                         <div id="elevator" class="col-md-4">
                             <%= f.label :elevator %>
-                            <%= f.grouped_collection_select :elevator_id, Column.all, :elevators, :id, :id, :id, include_blank: true %>
+                            <%= f.collection_select :elevator_id, Elevator.all, :id, :id, include_blank: true %>
                         </div>
                         <br>
-                        <%= f.submit %>
+                        <div id="employee" class="col-md-4">
+                            <%= f.label :employee %>
+                            <%= f.collection_select :employee_id, Employee.all, :id, :id, include_blank: true %>
+                        </div>
+                        <br>
+                        <div class="col-md-4">
+							<%= f.label :description %>
+							<textarea required maxlength="10000" rows="3" class="form-control" name="description" id="description"></textarea>
+						</div>
+                        <br>
+                        <div class="col-md-4">
+                            <%= f.submit "SAVE INTERVENTION", class: "btn btn-primary" %>
+                        </div>
                     </fieldset>
                 <% end %>
                 <!-- INTERVENTIONS -->
@@ -183,7 +195,5 @@
 		<a href="#" id="toTop"></a>
 
         <script>
-            // $(()=>{
-            //     $("#test").hide();
-            // })
+
         </script>
