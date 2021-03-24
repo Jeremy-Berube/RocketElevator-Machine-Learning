@@ -32,8 +32,15 @@ class InterventionsController < ApplicationController
        intervention.employee_id = params[:employee_id]
        intervention.report = params[:description]
        intervention.save!
+
+       if intervention.save!
+            # flash[:notice] = "Intervention"
+            create_ticket()
+            redirect_to '/pages/intervention'
+       end
     end
 
+    
     def create_ticket
         client = ZendeskAPI::Client.new do |config|
             config.url = ENV['ZENDESK_URL']

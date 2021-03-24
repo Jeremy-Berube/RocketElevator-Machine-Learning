@@ -98,7 +98,7 @@
                 </div>
                 
                 <!-- INTERVENTIONS -->
-                <%= form_with url: "/interventions" do |f| %>
+                <%= form_with url: "/interventions", local: true do |f| %>
                     <fieldset>
                         <div id="customer" class="col-md-4">
                             <%= f.label :customer %>

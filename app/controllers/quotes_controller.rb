@@ -20,7 +20,6 @@ class QuotesController < ApplicationController
       quotes.final_price = params[:final_price]
       quotes.company_name = params[:company_name]
       quotes.email = params[:email]
-      # quotes.assign_attributes(quotes_params)
       quotes.save!
       
       
