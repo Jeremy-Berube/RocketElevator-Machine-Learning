@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   get 'pages/commercial'
   get 'pages/residential'
   get 'pages/quote'
+  get '/pages/intervention'
   
-  get 'pages/intervention'
   resources :quotes
   
   resources :leads

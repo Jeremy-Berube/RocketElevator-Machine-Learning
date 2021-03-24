@@ -2,11 +2,8 @@
 
 $(()=>{
 
-    let building = $("#building").html();
-    $("#building").hide();
-    $("#battery").hide();
-    $("#column").hide();
-    $("#elevator").hide();
+    console.log("Value: "+ $("#customer_id").val() )
+
 
     $("#customer_id").change(function(){
        $("#building").show(); 
@@ -21,7 +18,8 @@ $(()=>{
                 console.log("Response: ", response);
                 // console.log(customer);
                 $("#building_id").empty();
-                $("#building_id").append("<option>-- LOOK AT THIS DUUUUDE --</option>");
+                $("#building_id").append("<option value="+""+">-- LOOK AT THIS DUUUUDE --</option>");
+                console.log("value: " + $("#building_id").val());
 
                     // $("#building_id").append("<option>")
                 for (let i = 0; i < response['buildings'].length; i++) {
@@ -29,7 +27,12 @@ $(()=>{
                 }
             }
         })
-
+        if($("#battery_id").val() || $("#column_id").val() || $("#elevator_id").val() != ""){
+            $("#battery").hide();
+            $("#column").hide();
+            $("#elevator").hide();
+        }
+        
     })
 
     $("#building_id").change(function(){
@@ -45,7 +48,7 @@ $(()=>{
                 console.log("Response: ", response);
                 // console.log(customer);
                 $("#battery_id").empty();
-                $("#battery_id").append("<option>-- LOOK AT THIS DUUUUDE --</option>");
+                $("#battery_id").append("<option value="+""+">-- LOOK AT THIS DUUUUDE --</option>");
 
                     // $("#building_id").append("<option>")
                 for (let i = 0; i < response['batteries'].length; i++) {
@@ -70,7 +73,7 @@ $(()=>{
                 console.log("Response: ", response);
                 // console.log(customer);
                 $("#column_id").empty();
-                $("#column_id").append("<option>-- LOOK AT THIS DUUUUDE --</option>");
+                $("#column_id").append("<option value="+""+">-- LOOK AT THIS DUUUUDE --</option>");
 
                     // $("#building_id").append("<option>")
                 for (let i = 0; i < response['columns'].length; i++) {
@@ -95,7 +98,7 @@ $(()=>{
                 console.log("Response: ", response);
                 // console.log(customer);
                 $("#elevator_id").empty();
-                $("#elevator_id").append("<option>-- LOOK AT THIS DUUUUDE --</option>");
+                $("#elevator_id").append("<option value="+""+">-- LOOK AT THIS DUUUUDE --</option>");
 
                     // $("#building_id").append("<option>")
                 for (let i = 0; i < response['elevators'].length; i++) {

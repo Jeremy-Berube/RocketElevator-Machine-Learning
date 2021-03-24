@@ -105,22 +105,22 @@
                             <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, include_blank: true %>
                         </div>
                         <br>
-                        <div id="building" class="col-md-4">
+                        <div id="building" class="col-md-4" style="display: none;">
                             <%= f.label :building %>
                             <%= f.collection_select :building_id, Building.all, :id, :id, include_blank: true %>
                         </div>
                         <br>
-                        <div id="battery" class="col-md-4">
+                        <div id="battery" class="col-md-4" style="display: none;">
                             <%= f.label :battery %>
                             <%= f.collection_select :battery_id, Battery.all, :id, :id, include_blank: true %>
                         </div>
                         <br>
-                        <div id="column" class="col-md-4">
+                        <div id="column" class="col-md-4" style="display: none;">
                             <%= f.label :column %>
                             <%= f.collection_select :column_id, Column.all, :id, :id, include_blank: true %>
                         </div>
                         <br>
-                        <div id="elevator" class="col-md-4">
+                        <div id="elevator" class="col-md-4" style="display: none;">
                             <%= f.label :elevator %>
                             <%= f.collection_select :elevator_id, Elevator.all, :id, :id, include_blank: true %>
                         </div>
@@ -136,7 +136,7 @@
 						</div>
                         <br>
                         <div class="col-md-4">
-                            <button id="send-intervention" type="submit" class="btn btn-primary" value="Submit">SEND INTERVENTION</button>
+                            <%= f.submit "SAVE INTERVENTION", class: "btn btn-primary" %>
                         </div>
                     </fieldset>
                 <% end %>
