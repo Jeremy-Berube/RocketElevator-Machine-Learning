@@ -34,7 +34,6 @@ class InterventionsController < ApplicationController
        intervention.save!
 
        if intervention.save!
-            # flash[:notice] = "Intervention"
             create_ticket()
             redirect_to '/pages/intervention'
        end

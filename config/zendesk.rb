@@ -1,6 +1,6 @@
 require 'zendesk_api'
 
-@client = ZendeskAPI::Client.new do |config|
+client = ZendeskAPI::Client.new do |config|
 # #   # Mandatory:
 
   config.url = ENV['ZENDESK_URL'] # e.g. https://mydesk.zendesk.com/api/v2
