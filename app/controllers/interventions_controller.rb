@@ -31,10 +31,11 @@ class InterventionsController < ApplicationController
        intervention.employee_id = params[:employee_id]
        intervention.report = params[:description]
        intervention.save!
+       
+       redirect_to '/pages/intervention'
 
-       if intervention.save
+       if intervention.save!
         flash[:alert] = "GG NO REMATCH"
-        # redirect_to '/pages/intervention'
        end
     end
 

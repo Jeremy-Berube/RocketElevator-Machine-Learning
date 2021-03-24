@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   
   resources :interventions 
   post '/interventions', to: 'interventions#create'
+  
   get 'update_buildings', to: 'interventions#update_buildings'
   get 'update_battery', to: 'interventions#update_battery'
   get 'update_column', to: 'interventions#update_column'
