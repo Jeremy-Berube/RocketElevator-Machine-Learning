@@ -34,7 +34,7 @@ module RailsAdmin
           register_instance_option :controller do
             proc do
                 authenticator = IBMWatson::Authenticators::IamAuthenticator.new(
-                    apikey: ENV["TEXT_TO_SPEECH_IAM_APIKEY"]
+                    apikey: ENV["TEXT_TO_SPEECH_APIKEY"]
                 )
                 text_to_speech = IBMWatson::TextToSpeechV1.new(
                     authenticator: authenticator

@@ -32,12 +32,12 @@ module RailsAdmin
           register_instance_option :controller do
             proc do
                 authenticator = IBMWatson::Authenticators::IamAuthenticator.new(
-                    apikey: ENV["STAR_WARS_APIKEY"]
+                    apikey: ENV["TEXT_TO_SPEECH_APIKEY"]
                 )
                 text_to_speech = IBMWatson::TextToSpeechV1.new(
                     authenticator: authenticator
                 )
-                text_to_speech.service_url = ENV["STAR_WARS_URL"]
+                text_to_speech.service_url = ENV["TEXT_TO_SPEECH_URL"]
                 
                 message = "Here are some interesting facts about Star Wars. Yoda was almost played by a monkey. Liam Neeson was too tall to play in the movies. R2D2 once spoke English, and was kind of a jerk."
                 
