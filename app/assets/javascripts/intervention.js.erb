@@ -34,8 +34,7 @@ $(()=>{
             $("#battery_id").empty();
             $("#column_id").empty();
             $("#elevator_id").empty();
-        }
-        
+        } 
     })
 
     $("#building_id").change(function(){
@@ -60,6 +59,11 @@ $(()=>{
                 }
             }
         })
+         if($("#building_id").val() == ""){
+            $("#battery").hide();
+            $("#column").hide();
+            $("#elevator").hide();
+        }
 
     })
 
@@ -76,6 +80,7 @@ $(()=>{
                 console.log("Response: ", response);
                 // console.log(customer);
                 $("#column_id").empty();
+                if($("#battery_id").val() != ""){$("#elevator").hide();}
                 $("#column_id").append("<option value="+""+"> Select </option>");
 
                     // $("#building_id").append("<option>")
@@ -85,6 +90,11 @@ $(()=>{
                 }
             }
         })
+
+        if($("#battery_id").val() == ""){
+            $("#column").hide();
+            $("#elevator").hide();
+        }
 
     })
 
