@@ -195,6 +195,11 @@ This week, we gathered all of the knowledge we aquired in the past weeks, and ap
 
 Link to the rest API: https://github.com/DaveVaval/Rocket-Elevators-Rest-API.git
 
+**Use these credentials to access the back office:**
+
+- Username: nicolas.genest@codeboxx.biz
+- Password: newdog1
+
 The new table:
 ![](app/assets/images/readmeimages/int_table.jpg)
 <hr>
