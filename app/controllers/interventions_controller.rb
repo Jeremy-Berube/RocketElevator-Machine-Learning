@@ -49,7 +49,7 @@ class InterventionsController < ApplicationController
 
        if intervention.save!
             create_ticket()
-            redirect_to '/pages/intervention'
+            redirect_to '/pages/intervention', notice: 'Intervention saved successfully!'
        end
     end
 
