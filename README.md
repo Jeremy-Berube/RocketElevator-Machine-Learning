@@ -194,6 +194,7 @@ This week, we gathered all of the knowledge we aquired in the past weeks, and ap
 - Build new endpoints on the Rest API 
 
 Link to the rest API: https://github.com/DaveVaval/Rocket-Elevators-Rest-API.git
+Link to the GraphQL API: https://github.com/DaveVaval/Rocket-Elevators-GraphQL-API.git
 
 **Use these credentials to access the back office:**
 
