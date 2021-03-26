@@ -193,6 +193,8 @@ This week, we gathered all of the knowledge we aquired in the past weeks, and ap
 - Creating a ZenDesk ticket to go along with the intervention
 - Build new endpoints on the Rest API 
 
+Link to the rest API: https://github.com/DaveVaval/Rocket-Elevators-Rest-API.git
+
 The new table:
 ![](app/assets/images/readmeimages/int_table.jpg)
 <hr>
