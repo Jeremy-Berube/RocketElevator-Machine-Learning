@@ -66,7 +66,7 @@ class InterventionsController < ApplicationController
         ZendeskAPI::Ticket.create!(client, 
             :subject => "New Intervention", 
             :comment => { 
-              :value => "#{current_user.employee.first_name} has requested an intervention for #{params[:full_name_company_contact]}.\n\n
+              :value => "#{current_user.employee.first_name} has requested an intervention for customer: #{params[:customer_id]}.\n\n
               Intervention summary:\n
               - Building: #{params[:building_id]}
               - Battery: #{params[:battery_id]}
