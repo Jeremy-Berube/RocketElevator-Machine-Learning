@@ -1,6 +1,7 @@
 class InterventionsController < ApplicationController
     require 'zendesk_api'
 
+    # These Methods are called by tje Afax function
     def update_buildings
         @buildingList = Building.where(customer_id: params[:customer_id])
         render json: {buildings: @buildingList}
@@ -21,17 +22,30 @@ class InterventionsController < ApplicationController
         render json: {elevators: @elevatorList}
     end
 
+    # With this logic, only the last element selected will be saved in the database
     def create
        intervention = Intervention.new
        intervention.author = current_user.id
-       intervention.customer_id = params[:customer_id]
-       intervention.building_id = params[:building_id]
-       intervention.battery_id = params[:battery_id]
-       intervention.column_id = params[:column_id]
-       intervention.elevator_id = params[:elevator_id]
-       intervention.employee_id = params[:employee_id]
-       intervention.report = params[:description]
-       intervention.save!
+
+       if params[:elevator_id].present?
+        intervention.customer_id = params[:customer_id]
+        intervention.elevator_id = params[:elevator_id]
+        intervention.employee_id = params[:employee_id]
+        intervention.report = params[:description]
+        intervention.save!
+       elsif params[:column_id].present?
+        intervention.customer_id = params[:customer_id]
+        intervention.column_id = params[:column_id]
+        intervention.employee_id = params[:employee_id]
+        intervention.report = params[:description]
+        intervention.save!
+       elsif params[:battery_id].present? &&
+        intervention.customer_id = params[:customer_id]
+        intervention.battery_id = params[:battery_id]
+        intervention.employee_id = params[:employee_id]
+        intervention.report = params[:description]
+        intervention.save!
+       end
 
        if intervention.save!
             create_ticket()
@@ -39,7 +53,7 @@ class InterventionsController < ApplicationController
        end
     end
 
-    
+    # This Method will send a ticket after the creation of an intervention
     def create_ticket
         client = ZendeskAPI::Client.new do |config|
             config.url = ENV['ZENDESK_URL']
