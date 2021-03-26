@@ -50,7 +50,7 @@ class InterventionsController < ApplicationController
 
        if intervention.save!
             create_ticket()
-            flash[:alert] = "Intervention saved successfully!"
+            flash[:notice] = "Intervention saved successfully!"
             redirect_to '/pages/intervention'
        end
 
