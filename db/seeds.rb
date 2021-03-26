@@ -346,3 +346,10 @@ Faker::UniqueGenerator.clear
         "building_id" => Faker::Number.unique.between(from: 1, to:100)
     }])
 end
+
+25.times do
+    Intervention.create!({
+        "author" => Faker::Number.between(from: 1, to: 7)
+        "customer_id" => Faker::Number.between(from: 1, to: 50)
+    })
+end
