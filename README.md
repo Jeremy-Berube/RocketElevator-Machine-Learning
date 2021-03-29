@@ -185,7 +185,9 @@ Then we developed a rake task to generate random data into that table.
 </details>
 
 # Consolidation 
-
+<details>
+<summary><i>CLICK TO EXPAND</i></summary>
+<br>
 This week, we gathered all of the knowledge we aquired in the past weeks, and applied in our tasks.
 
 - Build a new table in the MySQL database called Intervention
@@ -215,8 +217,9 @@ The controller logic to go with the form:
 
 All of the fields in the Intervention form are updated through and ajax call:
 ![](app/assets/images/readmeimages/ajaxcall.jpg)
+</details>
 
-
+# Quality and TDD
 
 
 
