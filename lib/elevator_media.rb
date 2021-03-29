@@ -1,6 +1,7 @@
 module ElevatorMedia
     class Streamer
-        def getContent
+        def self.getContent
+            0
         end
     end
 end
