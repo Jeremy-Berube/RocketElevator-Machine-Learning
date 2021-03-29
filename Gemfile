@@ -138,3 +138,6 @@ gem 'geocoder'
 gem 'openweather2'
 # ReCaptcha
 gem 'recaptcha', require: 'recaptcha/rails'
+
+# RSpec
+gem 'rspec', '~> 3.10'
