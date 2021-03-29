@@ -1,6 +1,13 @@
 require 'elevator_media'
 
+testGame = "<iframe width=100% height=100% src=https://www.addictinggames.com/embed/html5-games/23635 scrolling=no></iframe>"
+
+def format(data)
+    "<div> #{data} </div>"
+end
+
 describe ElevatorMedia::Streamer do
+
     describe "test" do
         context 'rspec test' do
             it 'returns number' do
@@ -8,14 +15,13 @@ describe ElevatorMedia::Streamer do
             end
         end
     end
-end
-
-describe ElevatorMedia::Streamer do
-    describe "test" do
+    
+    describe "Content test" do
         context 'test for data fetch' do
             it 'returns html' do
-                expect(ElevatorMedia::Streamer.getContent).to eq(0)
+                expect(ElevatorMedia::Streamer.getContent("test")).to eq(format(testGame)) 
             end
         end
     end
+    
 end
