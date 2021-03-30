@@ -248,7 +248,7 @@ This week, we learned about TDD (test-driven development) and BDD (behavior-driv
 ![](app/assets/images/readmeimages/user_rspec.jpg)
 <hr>
 
-**The final outcome**
+**The final outcome:**
 ![](app/assets/images/readmeimages/rspec.jpg)
 
 
