@@ -221,8 +221,35 @@ All of the fields in the Intervention form are updated through and ajax call:
 
 # Quality and TDD
 
+This week, we learned about TDD (test-driven development) and BDD (behavior-driven development). Our tasks were to:
 
+- Create a module (ElevatorMedia) and class (Streamer)
+- Create a method (getContent) that returns html in the form of "<'div'>Content<'div'>"
+- Build a test that will validate the data received from the getContent method
+- Apply the BDD to 3 existing parts of our code
 
+**ElevatorMedia module:**
+![](app/assets/images/readmeimages/elevatormedia.jpg)
+<br>
+
+**ElevatorMedia Spec:**
+![](app/assets/images/readmeimages/elevatormedia_rspec.jpg)
+<hr>
+
+**Lead routing spec:**
+![](app/assets/images/readmeimages/lead_rspec.jpg)
+<br>
+
+**Quote controller spec:**
+![](app/assets/images/readmeimages/quotes_rspec.jpg)
+<br>
+
+**User model spec:**
+![](app/assets/images/readmeimages/user_rspec.jpg)
+<hr>
+
+**The final outcome**
+![](app/assets/images/readmeimages/rspec.jpg)
 
 
 
