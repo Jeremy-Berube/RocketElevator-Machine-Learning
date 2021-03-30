@@ -20,23 +20,25 @@ describe ElevatorMedia::Streamer do
     end
     
     describe "getContent test" do
+        # Test that will check if the response is the iframe game in the correct format
         context 'test for data fetch' do
             it 'returns html game' do
                 expect(ElevatorMedia::Streamer.getContent("game")).to eq(format(testGame)) 
             end
         end
-
+         # Test that will check if the response is the iframe cardano chart in the correct format
         context 'test for data fetch' do
             it 'returns html Cardano chart' do
                 expect(ElevatorMedia::Streamer.getContent("ada")).to eq(format(ada))
             end
         end
-
+         # Test that will check if the response is in the correct format using a regex match
         context 'test for data fecth' do
             it 'returns html random quote' do
                 expect(ElevatorMedia::Streamer.getContent("quote")).to match(/<div>/)
             end
         end
+
     end
 
 end
