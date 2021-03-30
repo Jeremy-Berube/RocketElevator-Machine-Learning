@@ -1,10 +1,13 @@
 require 'elevator_media'
 
 testGame = "<iframe width=100% height=100% src=https://www.addictinggames.com/embed/html5-games/23635 scrolling=no></iframe>"
+ada = "<div class=nomics-ticker-widget data-name=Cardano data-base=ADA data-quote=USD></div><script src=https://widget.nomics.com/embed.js></script>"
 
 def format(data)
     "<div> #{data} </div>"
 end
+
+"<div>  </div>" =~ /<div>/
 
 describe ElevatorMedia::Streamer do
 
@@ -16,12 +19,24 @@ describe ElevatorMedia::Streamer do
         end
     end
     
-    describe "Content test" do
+    describe "getContent test" do
         context 'test for data fetch' do
-            it 'returns html' do
-                expect(ElevatorMedia::Streamer.getContent("test")).to eq(format(testGame)) 
+            it 'returns html game' do
+                expect(ElevatorMedia::Streamer.getContent("game")).to eq(format(testGame)) 
+            end
+        end
+
+        context 'test for data fetch' do
+            it 'returns html Cardano chart' do
+                expect(ElevatorMedia::Streamer.getContent("ada")).to eq(format(ada))
+            end
+        end
+
+        context 'test for data fecth' do
+            it 'returns html random quote' do
+                expect(ElevatorMedia::Streamer.getContent("quote")).to match(/<div>/)
             end
         end
     end
-    
+
 end

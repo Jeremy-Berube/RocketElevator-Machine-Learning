@@ -141,3 +141,4 @@ gem 'recaptcha', require: 'recaptcha/rails'
 
 # RSpec
 gem 'rspec', '~> 3.10'
+gem 'quotify'
