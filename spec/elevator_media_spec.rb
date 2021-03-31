@@ -38,7 +38,6 @@ describe ElevatorMedia::Streamer do
                 expect(ElevatorMedia::Streamer.getContent("quote")).to match(/<div>/)
             end
         end
-
     end
 
 end
