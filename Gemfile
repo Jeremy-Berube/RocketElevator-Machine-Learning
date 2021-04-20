@@ -143,4 +143,4 @@ gem 'recaptcha', require: 'recaptcha/rails'
 gem 'quotify'
 
 # Speech to text
-gem 'azure-tts', '~> 1.0'
+# gem 'azure-tts', '~> 1.0'
