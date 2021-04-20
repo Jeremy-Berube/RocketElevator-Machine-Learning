@@ -141,3 +141,6 @@ gem 'openweather2'
 gem 'recaptcha', require: 'recaptcha/rails'
 
 gem 'quotify'
+
+# Speech to text
+gem 'azure-tts', '~> 1.0'

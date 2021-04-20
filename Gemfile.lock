@@ -65,6 +65,10 @@ GEM
     arel (9.0.0)
     autoprefixer-rails (10.2.4.0)
       execjs
+    azure-tts (1.0.0)
+      faraday
+      faraday_middleware
+      ruby_speech
     bcrypt (3.1.16)
     bindex (0.8.1)
     blazer (2.4.2)
@@ -151,6 +155,8 @@ GEM
       multipart-post (>= 1.2, < 3)
       ruby2_keywords
     faraday-net_http (1.0.1)
+    faraday_middleware (1.0.0)
+      faraday (~> 1.0)
     faye-websocket (0.11.0)
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.5.1)
@@ -253,6 +259,8 @@ GEM
     net-scp (3.0.0)
       net-ssh (>= 2.6.5, < 7.0.0)
     net-ssh (6.1.0)
+    niceogiri (1.1.2)
+      nokogiri (~> 1.5)
     nio4r (2.5.7)
     nokogiri (1.11.2-x64-mingw32)
       racc (~> 1.4)
@@ -354,6 +362,10 @@ GEM
     ruby2_keywords (0.0.4)
     ruby_dep (1.5.0)
     ruby_http_client (3.5.2)
+    ruby_speech (2.1.2)
+      activesupport (>= 3.0.7)
+      niceogiri (~> 1.1, >= 1.1.2)
+      nokogiri (~> 1.5, >= 1.5.6)
     rubyzip (2.3.0)
     rvm1-capistrano3 (1.4.0)
       capistrano (~> 3.0)
@@ -450,6 +462,7 @@ PLATFORMS
 
 DEPENDENCIES
   activestorage-dropbox
+  azure-tts (~> 1.0)
   blazer
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.0.0)
