@@ -1,0 +1,2 @@
+class SpeechController < ApplicationController
+end
