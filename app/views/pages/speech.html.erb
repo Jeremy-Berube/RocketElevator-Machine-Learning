@@ -107,14 +107,6 @@
 
                     <center>
 
-
-                        <%# <a class="btn btn-primary" href="#" role="button">Link</a>
-                        <button class="btn btn-primary" type="submit">Button</button>
-                        <input class="btn btn-primary" type="button" value="Input">
-                        <input class="btn btn-primary" type="submit" value="Submit">
-                        <input class="btn btn-primary" type="reset" value="Reset"> %>
-
-
                         <button class="btn btn-light btn-lg" type="submit">AUDIO 1</button>
                         <button class="btn btn-light btn-lg" type="submit">AUDIO 2</button>
                         <button class="btn btn-light btn-lg" type="submit">AUDIO 3</button>
@@ -127,10 +119,6 @@
                         <button class="btn btn-light btn-lg" type="submit">AUDIO 10</button>
                         <br/><br/><br/>
 
-
-                        
-                        
-                        
 
                         <div class="heading-title col-md-10">
                             <label>Audio 1</label>&nbsp;
@@ -157,32 +145,6 @@
                         </div>
 
 
-                        <!--
-                        <div class="col-md-4">
-                            <%= f.submit "AUDIO 1", class: "btn btn-light" %>
-                        </div>
-                        -->
-                        <!--
-                        <div id="audio01" class="col-md-4">
-                            <%= f.label :audio_01 %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, readonly: true %>
-                        </div>
-                        -->
-                        <!--
-                        <div id="employee" class="col-md-4">
-                            <%= f.label :employee %>
-                            <%= f.collection_select :employee_id, Employee.all, :id, :id, include_blank: true %>
-                        </div>
-                        <br>
-                        -->
-                        <!--
-                        <div class="col-md-4">
-							<%= f.label :description %>
-							<textarea required maxlength="10000" rows="3" class="form-control" name="description" id="description"></textarea>
-						</div>
-                        <br>
-                        -->
-
                         <div class="col-md-4">
                             <%= f.submit "CHECK", class: "btn btn-primary" %>
                         </div>
@@ -203,28 +165,13 @@
                 <%= form_with url: "/interventions", local: true do |f| %>
 
                     <center>
-                        <!--
-                        <div id="customer" class="col-md-4">
-                            <%= f.label :audio %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
-                        </div>
-                        <br>
-                        <div id="employee" class="col-md-4">
-                            <%= f.label :employee %>
-                            <%= f.collection_select :employee_id, Employee.all, :id, :id, include_blank: true %>
-                        </div>
-                        <br>
-                        -->
+
                         <div class="col-md-4">
 							<%= f.label :text %>
 							<textarea required maxlength="10000" rows="3" class="form-control" name="description" id="description"></textarea>
 						</div>
                         <br>
-                        <!--
-                        <div class="col-md-4">
-                            <%= f.submit "SUBMIT", class: "btn btn-primary" %>
-                        </div>
-                        -->
+
                     </center>
                     
                 <% end %>
