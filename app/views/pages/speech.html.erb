@@ -121,33 +121,18 @@
 
 
                         <div class="heading-title col-md-10">
-                            <label>Audio 1</label>&nbsp;
-                            <input type="text" size="30" name="total" id="total" class="form-input-fields" readonly>
+                            <label>Identified Person</label>&nbsp;
+                            <input type="text" size="30" name="person_identify" id="" class="form-input-fields" readonly>
                             &nbsp;
                         </div>
 
-                        <div class="heading-title col-md-10">
-                            <label>Audio 2</label>&nbsp;
-                            <input type="text" size="30" name="total" id="total" class="form-input-fields" readonly>
-                            &nbsp;
-                        </div>
+                        <div class="col-md-6">
+							<%= f.label :result %>
+							<textarea required maxlength="10000" rows="8" class="form-control" name="result" id="" readonly></textarea>
+						</div>
 
-                        <div class="heading-title col-md-10">
-                            <label>Audio 3</label>&nbsp;
-                            <input type="text" size="30" name="total" id="total" class="form-input-fields" readonly>
-                            &nbsp;
-                        </div>
+                        <br/><br/><br/>
 
-                        <div class="heading-title col-md-10">
-                            <label>Audio 4</label>&nbsp;
-                            <input type="text" size="30" name="total" id="total" class="form-input-fields" readonly>
-                            &nbsp;
-                        </div>
-
-
-                        <div class="col-md-4">
-                            <%= f.submit "CHECK", class: "btn btn-primary" %>
-                        </div>
                     </center>
 
                 <% end %>
@@ -166,9 +151,9 @@
 
                     <center>
 
-                        <div class="col-md-8">
+                        <div class="col-md-6">
 							<%= f.label :text %>
-							<textarea required maxlength="10000" rows="5" class="form-control" name="description" id="" readonly></textarea>
+							<textarea required maxlength="10000" rows="5" class="form-control" name="speech_to_text" id="" readonly></textarea>
 						</div>
                         <br>
 
@@ -186,7 +171,7 @@
 
 
             <!-- FOUNDATION -->
-			    <section class="parallax parallax-1" style="background-image: url(<%= image_path "elavator-cityview-crop.jpg"%>)">
+			    <section class="parallax parallax-1" style="background-image: url(<%= image_path "gif_elevator02.gif"%>)">
 				<div class="overlay dark-5"></div>
 				<div class="container">
 					<div class="text-center">
