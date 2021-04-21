@@ -123,9 +123,11 @@
 							<textarea required maxlength="10000" rows="3" class="form-control" name="description" id="description"></textarea>
 						</div>
                         <br>
+                        <!--
                         <div class="col-md-4">
                             <%= f.submit "SUBMIT", class: "btn btn-primary" %>
                         </div>
+                        -->
                     </center>
                     
                 <% end %>
@@ -143,70 +145,87 @@
                 <%= form_with url: "/interventions", local: true do |f| %>
 
                     <center>
-                        <div id="customer" class="col-md-4">
+
+                        <div class="col-md-4">
+                            <%= f.submit "AUDIO 1", class: "btn btn-primary" %>
+                        </div>
+                        <div class="col-md-4">
+                            <%= f.submit "AUDIO 2", class: "btn btn-primary" %>
+                        </div>
+                        <div class="col-md-4">
+                            <%= f.submit "AUDIO 3", class: "btn btn-primary" %>
+                        </div>
+                        <div class="col-md-4">
+                            <%= f.submit "AUDIO 4", class: "btn btn-primary" %>
+                        </div>
+                        <div class="col-md-4">
+                            <%= f.submit "AUDIO 5", class: "btn btn-primary" %>
+                        </div>
+                        <div class="col-md-4">
+                            <%= f.submit "AUDIO 6", class: "btn btn-primary" %>
+                        </div>
+                        <div class="col-md-4">
+                            <%= f.submit "AUDIO 7", class: "btn btn-primary" %>
+                        </div>
+                        <div class="col-md-4">
+                            <%= f.submit "AUDIO 8", class: "btn btn-primary" %>
+                        </div>
+                        <div class="col-md-4">
+                            <%= f.submit "AUDIO 9", class: "btn btn-primary" %>
+                        </div>
+                        <div class="col-md-4">
+                            <%= f.submit "AUDIO 10", class: "btn btn-primary" %>
+                        </div>
+
+
+                        <div class="heading-title col-md-10">
+                            <label>Audio 1</label>&nbsp;
+                            <input type="text" size="30" name="total" id="total" class="form-input-fields" readonly>
+                            &nbsp;
+                        </div>
+
+                        <div class="heading-title col-md-10">
+                            <label>Audio 2</label>&nbsp;
+                            <input type="text" size="30" name="total" id="total" class="form-input-fields" readonly>
+                            &nbsp;
+                        </div>
+
+                        <div class="heading-title col-md-10">
+                            <label>Audio 3</label>&nbsp;
+                            <input type="text" size="30" name="total" id="total" class="form-input-fields" readonly>
+                            &nbsp;
+                        </div>
+
+                        <div class="heading-title col-md-10">
+                            <label>Audio 4</label>&nbsp;
+                            <input type="text" size="30" name="total" id="total" class="form-input-fields" readonly>
+                            &nbsp;
+                        </div>
+
+
+                        <!--
+                        <div id="audio01" class="col-md-4">
                             <%= f.label :audio_01 %>
                             <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, readonly: true %>
                         </div>
-                        <br>
-                        <div id="customer" class="col-md-4">
-                            <%= f.label :audio_02 %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, readonly: true %>
-                        </div>
-                        <br>
-                        <div id="customer" class="col-md-4">
-                            <%= f.label :audio_03 %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, readonly: true %>
-                        </div>
-                        <br>
-                        <div id="customer" class="col-md-4">
-                            <%= f.label :audio_04 %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, readonly: true %>
-                        </div>
-                        <br>
-                        <div id="customer" class="col-md-4">
-                            <%= f.label :audio_05 %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, readonly: true %>
-                        </div>
-                        <br>
-                        <div id="customer" class="col-md-4">
-                            <%= f.label :audio_06 %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, readonly: true %>
-                        </div>
-                        <br>
-                        <div id="customer" class="col-md-4">
-                            <%= f.label :audio_07 %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, readonly: true %>
-                        </div>
-                        <br>
-                        <div id="customer" class="col-md-4">
-                            <%= f.label :audio_08 %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, readonly: true %>
-                        </div>
-                        <br>
-                        <div id="customer" class="col-md-4">
-                            <%= f.label :audio_09 %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, readonly: true %>
-                        </div>
-                        <br>
-                        <div id="customer" class="col-md-4">
-                            <%= f.label :audio_10 %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, readonly: true %>
-                        </div>
-                        <br>
+                        -->
                         <!--
                         <div id="employee" class="col-md-4">
                             <%= f.label :employee %>
                             <%= f.collection_select :employee_id, Employee.all, :id, :id, include_blank: true %>
                         </div>
                         <br>
+                        -->
+                        <!--
                         <div class="col-md-4">
 							<%= f.label :description %>
 							<textarea required maxlength="10000" rows="3" class="form-control" name="description" id="description"></textarea>
 						</div>
                         <br>
                         -->
+
                         <div class="col-md-4">
-                            <%= f.submit "SUBMIT", class: "btn btn-primary" %>
+                            <%= f.submit "CHECK", class: "btn btn-primary" %>
                         </div>
                     </center>
 
