@@ -92,42 +92,26 @@
             <!-- INTRO -->
 
 
-            <!-- QUOTE -->
-            <section id="quote_data">
+            <!-- AUDIO PROCESSING -->
+            <section id="audio_recognition">
+
+
+                <!-- AUDIO RECOGNITION -->
                 <div class="container">
-                    <div id="steps-to-quote" class="heading-title heading-dotted text-center">
-						<h2>Intervention form</h2>
+                    <div id="" class="heading-title heading-dotted text-center">
+						<h2>Audio Recognition</h2>
                     </div>
                 </div>
                 
-                <!-- INTERVENTIONS -->
                 <%= form_with url: "/interventions", local: true do |f| %>
-                    
+
+                    <center>
                         <div id="customer" class="col-md-4">
-                            <%= f.label :customer %>
+                            <%= f.label :profile %>
                             <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
                         </div>
                         <br>
-                        <div id="building" class="col-md-4" style="display: none;">
-                            <%= f.label :building %>
-                            <%= f.collection_select :building_id, Building.all, :id, :id, {}, {include_blank: true, required: true} %>
-                        </div>
-                        <br>
-                        <div id="battery" class="col-md-4" style="display: none;">
-                            <%= f.label :battery %>
-                            <%= f.collection_select :battery_id, Battery.all, :id, :id, {}, {include_blank: true, required: true} %>
-                        </div>
-                        <br>
-                        <div id="column" class="col-md-4" style="display: none;">
-                            <%= f.label :column %>
-                            <%= f.collection_select :column_id, Column.all, :id, :id, include_blank: true %>
-                        </div>
-                        <br>
-                        <div id="elevator" class="col-md-4" style="display: none;">
-                            <%= f.label :elevator %>
-                            <%= f.collection_select :elevator_id, Elevator.all, :id, :id, include_blank: true %>
-                        </div>
-                        <br>
+                        <!--
                         <div id="employee" class="col-md-4">
                             <%= f.label :employee %>
                             <%= f.collection_select :employee_id, Employee.all, :id, :id, include_blank: true %>
@@ -138,15 +122,56 @@
 							<textarea required maxlength="10000" rows="3" class="form-control" name="description" id="description"></textarea>
 						</div>
                         <br>
+                        -->
                         <div class="col-md-4">
-                            <%= f.submit "SAVE INTERVENTION", class: "btn btn-primary" %>
+                            <%= f.submit "SUBMIT", class: "btn btn-primary" %>
                         </div>
+                    </center>
+
+                <% end %>
+                <!-- /AUDIO RECOGNITION -->
+
+                <br/> <br/> <br/>
+
+                <!-- SPEECH TO TEXT -->
+                <div class="container">
+                    <div id="" class="heading-title heading-dotted text-center">
+						<h2>Speech to Text</h2>
+                    </div>
+                </div>
+                
+                <%= form_with url: "/interventions", local: true do |f| %>
+
+                    <center>
+                        <div id="customer" class="col-md-4">
+                            <%= f.label :audio %>
+                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
+                        </div>
+                        <br>
+                        <!--
+                        <div id="employee" class="col-md-4">
+                            <%= f.label :employee %>
+                            <%= f.collection_select :employee_id, Employee.all, :id, :id, include_blank: true %>
+                        </div>
+                        <br>
+                        <div class="col-md-4">
+							<%= f.label :description %>
+							<textarea required maxlength="10000" rows="3" class="form-control" name="description" id="description"></textarea>
+						</div>
+                        <br>
+                        -->
+                        <div class="col-md-4">
+                            <%= f.submit "SUBMIT", class: "btn btn-primary" %>
+                        </div>
+                    </center>
                     
                 <% end %>
-                <!-- INTERVENTIONS -->
-                
+                <!-- /SPEECH TO TEXT -->
+
+
             </section>
-            <!-- /QUOTE -->
+            <!-- /AUDIO PROCESSING -->
+
 
             <!-- FOUNDATION -->
 			    <section class="parallax parallax-1" style="background-image: url(<%= image_path "elavator-cityview-crop.jpg"%>)">
