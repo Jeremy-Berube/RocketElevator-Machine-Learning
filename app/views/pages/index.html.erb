@@ -43,15 +43,21 @@
                                 <%= link_to "CONTACT",root_path(:anchor => "contact") %>
                             </li>
 							<% if user_signed_in? && current_user.supervisor_role? %>
+
 								<li><!-- LOGOUT -->
 									<%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
+								
 								<li><!-- INTERVENTIONS -->
 									<%= link_to "INTERVENTIONS", pages_intervention_url %>
 								</li>
+								
 								<li><!-- SPEECH -->
 									<%= link_to "SPEECH", pages_speech_url %>
 								</li>
+								
 								</li>
+								
+								
 								<li><!-- ADMIN -->
 									<%= link_to "ADMIN", rails_admin_url %>
 								</li>
