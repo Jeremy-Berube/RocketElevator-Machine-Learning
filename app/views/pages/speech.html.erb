@@ -73,7 +73,7 @@
 
 			<!-- INTRO -->
 			<div class="slider fullwidthbanner-container roundedcorners">
-				<div id="home" class="fullwidthbanner" data-delay="0" data-height="500" data-shadow="0" data-navigationStyle="preview2">
+				<div id="home" class="fullwidthbanner" data-delay="0" data-height="600" data-shadow="0" data-navigationStyle="preview2">
 					<ul class="hide">
 						<li data-transition="parallaxtobottom" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off"  data-title="Our Values">
 							<!-- MAIN IMAGE -->
@@ -141,8 +141,21 @@
                     </div>
                 </div>
                 
-                <%= form_with url: "/interventions", local: true do |f| %>
+                <%= form_with url: "/speech", local: true do |f| %>
                     <center>
+                        <!-- BUTTON ATTACH AUDIO -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="attachment">File Attachment</label>
+                                <!-- custom file upload -->
+                                &nbsp &nbsp &nbsp
+                                <input class="custom-file-upload" type="file" name="attachment" id="" data-btn-text="Select a File" />
+                                <small class="text-muted block">Max file size: 10Mb (wav)</small>
+                            </div>
+                        </div>
+                        <br/>
+                        <!-- /BUTTON ATTACH AUDIO -->
+                        
                         <div class="col-md-6">
 							<%= f.label :text %>
 							<textarea required maxlength="10000" rows="5" class="form-control" name="speech_to_text" id="" readonly></textarea>
@@ -158,7 +171,7 @@
 
             <!-- GIRLS DANCING AND SINGING -->
             <div class="slider fullwidthbanner-container roundedcorners">
-				<div id="home" class="fullwidthbanner" data-height="500">
+				<div id="" class="fullwidthbanner" data-height="500">
 					<ul class="hide">
 						<li data-transition="parallaxtobottom" >
 							<!-- MAIN IMAGE -->
