@@ -96,6 +96,103 @@
             <section id="audio_recognition">
 
 
+                <!-- AUDIO RECOGNITION -->
+                <div class="container">
+                    <div id="" class="heading-title heading-dotted text-center">
+						<h2>Audio Recognition</h2>
+                    </div>
+                </div>
+                
+                <%= form_with url: "/speech", local: true do |f| %>
+
+                    <center>
+
+
+                        <%# <a class="btn btn-primary" href="#" role="button">Link</a>
+                        <button class="btn btn-primary" type="submit">Button</button>
+                        <input class="btn btn-primary" type="button" value="Input">
+                        <input class="btn btn-primary" type="submit" value="Submit">
+                        <input class="btn btn-primary" type="reset" value="Reset"> %>
+
+
+                        <button class="btn btn-light btn-lg" type="submit">AUDIO 1</button>
+                        <button class="btn btn-light btn-lg" type="submit">AUDIO 2</button>
+                        <button class="btn btn-light btn-lg" type="submit">AUDIO 3</button>
+                        <button class="btn btn-light btn-lg" type="submit">AUDIO 4</button>
+                        <button class="btn btn-light btn-lg" type="submit">AUDIO 5</button>
+                        <button class="btn btn-light btn-lg" type="submit">AUDIO 6</button>
+                        <button class="btn btn-light btn-lg" type="submit">AUDIO 7</button>
+                        <button class="btn btn-light btn-lg" type="submit">AUDIO 8</button>
+                        <button class="btn btn-light btn-lg" type="submit">AUDIO 9</button>
+                        <button class="btn btn-light btn-lg" type="submit">AUDIO 10</button>
+                        <br/><br/><br/>
+
+
+                        
+                        
+                        
+
+                        <div class="heading-title col-md-10">
+                            <label>Audio 1</label>&nbsp;
+                            <input type="text" size="30" name="total" id="total" class="form-input-fields" readonly>
+                            &nbsp;
+                        </div>
+
+                        <div class="heading-title col-md-10">
+                            <label>Audio 2</label>&nbsp;
+                            <input type="text" size="30" name="total" id="total" class="form-input-fields" readonly>
+                            &nbsp;
+                        </div>
+
+                        <div class="heading-title col-md-10">
+                            <label>Audio 3</label>&nbsp;
+                            <input type="text" size="30" name="total" id="total" class="form-input-fields" readonly>
+                            &nbsp;
+                        </div>
+
+                        <div class="heading-title col-md-10">
+                            <label>Audio 4</label>&nbsp;
+                            <input type="text" size="30" name="total" id="total" class="form-input-fields" readonly>
+                            &nbsp;
+                        </div>
+
+
+                        <!--
+                        <div class="col-md-4">
+                            <%= f.submit "AUDIO 1", class: "btn btn-light" %>
+                        </div>
+                        -->
+                        <!--
+                        <div id="audio01" class="col-md-4">
+                            <%= f.label :audio_01 %>
+                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, readonly: true %>
+                        </div>
+                        -->
+                        <!--
+                        <div id="employee" class="col-md-4">
+                            <%= f.label :employee %>
+                            <%= f.collection_select :employee_id, Employee.all, :id, :id, include_blank: true %>
+                        </div>
+                        <br>
+                        -->
+                        <!--
+                        <div class="col-md-4">
+							<%= f.label :description %>
+							<textarea required maxlength="10000" rows="3" class="form-control" name="description" id="description"></textarea>
+						</div>
+                        <br>
+                        -->
+
+                        <div class="col-md-4">
+                            <%= f.submit "CHECK", class: "btn btn-primary" %>
+                        </div>
+                    </center>
+
+                <% end %>
+            <!-- /AUDIO RECOGNITION -->
+
+
+
             <!-- SPEECH TO TEXT -->
                 <div class="container">
                     <div id="" class="heading-title heading-dotted text-center">
@@ -131,106 +228,10 @@
                     </center>
                     
                 <% end %>
-                <!-- /SPEECH TO TEXT -->
-
-                <br/> <br/> <br/>
-
-                <!-- AUDIO RECOGNITION -->
-                <div class="container">
-                    <div id="" class="heading-title heading-dotted text-center">
-						<h2>Audio Recognition</h2>
-                    </div>
-                </div>
-                
-                <%= form_with url: "/interventions", local: true do |f| %>
-
-                    <center>
-
-                        <div class="col-md-4">
-                            <%= f.submit "AUDIO 1", class: "btn btn-primary" %>
-                        </div>
-                        <div class="col-md-4">
-                            <%= f.submit "AUDIO 2", class: "btn btn-primary" %>
-                        </div>
-                        <div class="col-md-4">
-                            <%= f.submit "AUDIO 3", class: "btn btn-primary" %>
-                        </div>
-                        <div class="col-md-4">
-                            <%= f.submit "AUDIO 4", class: "btn btn-primary" %>
-                        </div>
-                        <div class="col-md-4">
-                            <%= f.submit "AUDIO 5", class: "btn btn-primary" %>
-                        </div>
-                        <div class="col-md-4">
-                            <%= f.submit "AUDIO 6", class: "btn btn-primary" %>
-                        </div>
-                        <div class="col-md-4">
-                            <%= f.submit "AUDIO 7", class: "btn btn-primary" %>
-                        </div>
-                        <div class="col-md-4">
-                            <%= f.submit "AUDIO 8", class: "btn btn-primary" %>
-                        </div>
-                        <div class="col-md-4">
-                            <%= f.submit "AUDIO 9", class: "btn btn-primary" %>
-                        </div>
-                        <div class="col-md-4">
-                            <%= f.submit "AUDIO 10", class: "btn btn-primary" %>
-                        </div>
+            <!-- /SPEECH TO TEXT -->
 
 
-                        <div class="heading-title col-md-10">
-                            <label>Audio 1</label>&nbsp;
-                            <input type="text" size="30" name="total" id="total" class="form-input-fields" readonly>
-                            &nbsp;
-                        </div>
 
-                        <div class="heading-title col-md-10">
-                            <label>Audio 2</label>&nbsp;
-                            <input type="text" size="30" name="total" id="total" class="form-input-fields" readonly>
-                            &nbsp;
-                        </div>
-
-                        <div class="heading-title col-md-10">
-                            <label>Audio 3</label>&nbsp;
-                            <input type="text" size="30" name="total" id="total" class="form-input-fields" readonly>
-                            &nbsp;
-                        </div>
-
-                        <div class="heading-title col-md-10">
-                            <label>Audio 4</label>&nbsp;
-                            <input type="text" size="30" name="total" id="total" class="form-input-fields" readonly>
-                            &nbsp;
-                        </div>
-
-
-                        <!--
-                        <div id="audio01" class="col-md-4">
-                            <%= f.label :audio_01 %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, readonly: true %>
-                        </div>
-                        -->
-                        <!--
-                        <div id="employee" class="col-md-4">
-                            <%= f.label :employee %>
-                            <%= f.collection_select :employee_id, Employee.all, :id, :id, include_blank: true %>
-                        </div>
-                        <br>
-                        -->
-                        <!--
-                        <div class="col-md-4">
-							<%= f.label :description %>
-							<textarea required maxlength="10000" rows="3" class="form-control" name="description" id="description"></textarea>
-						</div>
-                        <br>
-                        -->
-
-                        <div class="col-md-4">
-                            <%= f.submit "CHECK", class: "btn btn-primary" %>
-                        </div>
-                    </center>
-
-                <% end %>
-                <!-- /AUDIO RECOGNITION -->
 
 
             </section>
