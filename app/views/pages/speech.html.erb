@@ -73,7 +73,7 @@
 
 			<!-- INTRO -->
 			<div class="slider fullwidthbanner-container roundedcorners">
-				<div id="home" class="fullwidthbanner" data-delay="0" data-height="600" data-shadow="0" data-navigationStyle="preview2">
+				<div id="home" class="fullwidthbanner" data-delay="0" data-height="500" data-shadow="0" data-navigationStyle="preview2">
 					<ul class="hide">
 						<li data-transition="parallaxtobottom" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off"  data-title="Our Values">
 							<!-- MAIN IMAGE -->
@@ -102,11 +102,9 @@
 						<h2>Audio Recognition</h2>
                     </div>
                 </div>
-                
+
                 <%= form_with url: "/speech", local: true do |f| %>
-
                     <center>
-
                         <button class="btn btn-light btn-lg" type="submit">AUDIO 1</button>
                         <button class="btn btn-light btn-lg" type="submit">AUDIO 2</button>
                         <button class="btn btn-light btn-lg" type="submit">AUDIO 3</button>
@@ -125,22 +123,18 @@
                             <input type="text" size="30" name="person_identify" id="" class="form-input-fields" readonly>
                             &nbsp;
                         </div>
-
                         <div class="col-md-6">
 							<%= f.label :result %>
 							<textarea required maxlength="10000" rows="8" class="form-control" name="result" id="" readonly></textarea>
 						</div>
-
                         <br/><br/><br/>
-
                     </center>
-
                 <% end %>
-            <!-- /AUDIO RECOGNITION -->
+                <!-- /AUDIO RECOGNITION -->
 
 
 
-            <!-- SPEECH TO TEXT -->
+                <!-- SPEECH TO TEXT -->
                 <div class="container">
                     <div id="" class="heading-title heading-dotted text-center">
 						<h2>Speech to Text</h2>
@@ -148,38 +142,44 @@
                 </div>
                 
                 <%= form_with url: "/interventions", local: true do |f| %>
-
                     <center>
-
                         <div class="col-md-6">
 							<%= f.label :text %>
 							<textarea required maxlength="10000" rows="5" class="form-control" name="speech_to_text" id="" readonly></textarea>
 						</div>
-                        <br>
-
                     </center>
-                    
                 <% end %>
-            <!-- /SPEECH TO TEXT -->
-
-
-
+                <!-- /SPEECH TO TEXT -->
 
 
             </section>
             <!-- /AUDIO PROCESSING -->
 
 
+            <!-- GIRLS DANCING AND SINGING -->
+            <div class="slider fullwidthbanner-container roundedcorners">
+				<div id="home" class="fullwidthbanner" data-height="500">
+					<ul class="hide">
+						<li data-transition="parallaxtobottom" >
+							<!-- MAIN IMAGE -->
+							<img src="/assets/gif_elevator02cropped2.gif"  alt="Gif: girls dancing and singing"  data-bgposition="center" data-bgfit="cover" data-bgrepeat="no-repeat">
+                            <div class="overlay dark-4"></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+            <!-- /GIRLS DANCING AND SINGING -->
+
+
             <!-- FOUNDATION -->
-			    <section class="parallax parallax-1" style="background-image: url(<%= image_path "gif_elevator02.gif"%>)">
-				<div class="overlay dark-3"></div>
-				<div class="container">
+                <br/>
+                <div class="container">
 					<div class="text-center">
 						<h2 class="fs-40 fw-300">Elevating Quality Since 1976</h2>
                         <%= link_to "CONTACT US",root_path(:anchor => "contact"), class:"btn btn-primary btn-lg" %>
 					</div>
 				</div>
-            </section>
+                <br/><br/><br/>
             <!-- /FOUNDATION -->
             
 
