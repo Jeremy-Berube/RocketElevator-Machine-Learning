@@ -96,6 +96,43 @@
             <section id="audio_recognition">
 
 
+            <!-- SPEECH TO TEXT -->
+                <div class="container">
+                    <div id="" class="heading-title heading-dotted text-center">
+						<h2>Speech to Text</h2>
+                    </div>
+                </div>
+                
+                <%= form_with url: "/interventions", local: true do |f| %>
+
+                    <center>
+                        <!--
+                        <div id="customer" class="col-md-4">
+                            <%= f.label :audio %>
+                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
+                        </div>
+                        <br>
+                        <div id="employee" class="col-md-4">
+                            <%= f.label :employee %>
+                            <%= f.collection_select :employee_id, Employee.all, :id, :id, include_blank: true %>
+                        </div>
+                        <br>
+                        -->
+                        <div class="col-md-4">
+							<%= f.label :text %>
+							<textarea required maxlength="10000" rows="3" class="form-control" name="description" id="description"></textarea>
+						</div>
+                        <br>
+                        <div class="col-md-4">
+                            <%= f.submit "SUBMIT", class: "btn btn-primary" %>
+                        </div>
+                    </center>
+                    
+                <% end %>
+                <!-- /SPEECH TO TEXT -->
+
+                <br/> <br/> <br/>
+
                 <!-- AUDIO RECOGNITION -->
                 <div class="container">
                     <div id="" class="heading-title heading-dotted text-center">
@@ -107,7 +144,52 @@
 
                     <center>
                         <div id="customer" class="col-md-4">
-                            <%= f.label :profile %>
+                            <%= f.label :audio_01 %>
+                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
+                        </div>
+                        <br>
+                        <div id="customer" class="col-md-4">
+                            <%= f.label :audio_02 %>
+                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
+                        </div>
+                        <br>
+                        <div id="customer" class="col-md-4">
+                            <%= f.label :audio_03 %>
+                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
+                        </div>
+                        <br>
+                        <div id="customer" class="col-md-4">
+                            <%= f.label :audio_04 %>
+                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
+                        </div>
+                        <br>
+                        <div id="customer" class="col-md-4">
+                            <%= f.label :audio_05 %>
+                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
+                        </div>
+                        <br>
+                        <div id="customer" class="col-md-4">
+                            <%= f.label :audio_06 %>
+                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
+                        </div>
+                        <br>
+                        <div id="customer" class="col-md-4">
+                            <%= f.label :audio_07 %>
+                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
+                        </div>
+                        <br>
+                        <div id="customer" class="col-md-4">
+                            <%= f.label :audio_08 %>
+                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
+                        </div>
+                        <br>
+                        <div id="customer" class="col-md-4">
+                            <%= f.label :audio_09 %>
+                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
+                        </div>
+                        <br>
+                        <div id="customer" class="col-md-4">
+                            <%= f.label :audio_10 %>
                             <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
                         </div>
                         <br>
@@ -130,43 +212,6 @@
 
                 <% end %>
                 <!-- /AUDIO RECOGNITION -->
-
-                <br/> <br/> <br/>
-
-                <!-- SPEECH TO TEXT -->
-                <div class="container">
-                    <div id="" class="heading-title heading-dotted text-center">
-						<h2>Speech to Text</h2>
-                    </div>
-                </div>
-                
-                <%= form_with url: "/interventions", local: true do |f| %>
-
-                    <center>
-                        <div id="customer" class="col-md-4">
-                            <%= f.label :audio %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
-                        </div>
-                        <br>
-                        <!--
-                        <div id="employee" class="col-md-4">
-                            <%= f.label :employee %>
-                            <%= f.collection_select :employee_id, Employee.all, :id, :id, include_blank: true %>
-                        </div>
-                        <br>
-                        <div class="col-md-4">
-							<%= f.label :description %>
-							<textarea required maxlength="10000" rows="3" class="form-control" name="description" id="description"></textarea>
-						</div>
-                        <br>
-                        -->
-                        <div class="col-md-4">
-                            <%= f.submit "SUBMIT", class: "btn btn-primary" %>
-                        </div>
-                    </center>
-                    
-                <% end %>
-                <!-- /SPEECH TO TEXT -->
 
 
             </section>
