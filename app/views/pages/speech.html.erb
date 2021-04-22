@@ -105,16 +105,16 @@
 
                 <%= form_with url: "/speech", local: true do |f| %>
                     <center>
-                        <button class="btn btn-light btn-lg" type="submit">AUDIO 1</button>
-                        <button class="btn btn-light btn-lg" type="submit">AUDIO 2</button>
-                        <button class="btn btn-light btn-lg" type="submit">AUDIO 3</button>
-                        <button class="btn btn-light btn-lg" type="submit">AUDIO 4</button>
-                        <button class="btn btn-light btn-lg" type="submit">AUDIO 5</button>
-                        <button class="btn btn-light btn-lg" type="submit">AUDIO 6</button>
-                        <button class="btn btn-light btn-lg" type="submit">AUDIO 7</button>
-                        <button class="btn btn-light btn-lg" type="submit">AUDIO 8</button>
-                        <button class="btn btn-light btn-lg" type="submit">AUDIO 9</button>
-                        <button class="btn btn-light btn-lg" type="submit">AUDIO 10</button>
+                        <button class="btn btn-light btn-lg" id="audio1" type="submit">AUDIO 1</button>
+                        <button class="btn btn-light btn-lg" id="audio2" type="submit">AUDIO 2</button>
+                        <button class="btn btn-light btn-lg" id="audio3" type="submit">AUDIO 3</button>
+                        <button class="btn btn-light btn-lg" id="audio4" type="submit">AUDIO 4</button>
+                        <button class="btn btn-light btn-lg" id="audio5" type="submit">AUDIO 5</button>
+                        <button class="btn btn-light btn-lg" id="audio6" type="submit">AUDIO 6</button>
+                        <button class="btn btn-light btn-lg" id="audio7" type="submit">AUDIO 7</button>
+                        <button class="btn btn-light btn-lg" id="audio8" type="submit">AUDIO 8</button>
+                        <button class="btn btn-light btn-lg" id="audio9" type="submit">AUDIO 9</button>
+                        <button class="btn btn-light btn-lg" id="audio10" type="submit">AUDIO 10</button>
                         <br/><br/><br/>
 
 
@@ -123,10 +123,11 @@
                             <input type="text" size="30" name="person_identify" id="" class="form-input-fields" readonly>
                             &nbsp;
                         </div>
+                        <!--
                         <div class="col-md-6">
 							<%= f.label :result %>
 							<textarea required maxlength="10000" rows="8" class="form-control" name="result" id="" readonly></textarea>
-						</div>
+						</div>-->
                         <br/><br/><br/>
                     </center>
                 <% end %>
