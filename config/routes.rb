@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get 'update_column', to: 'interventions#update_column'
   get 'update_elevator', to: 'interventions#update_elevator'
   get 'dropbox/auth_callback' => 'dropbox#auth_callback'
-
+  get '/test' => 'speech#speech'
 
   resources :quotes
   resources :leads
