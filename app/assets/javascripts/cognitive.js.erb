@@ -1,0 +1,17 @@
+$(".buttonGrey").on("click", function() {
+ console.log("JS before calling ajax " );
+});
+window.getProfile = function() {
+
+        console.log("JS before calling ajax " );
+        $.ajax({
+            url: "/create_profile",
+            method: "GET",
+            data: 
+            dataType: "json",
+            success: function (response) {
+                console.log("Profile created : " + response);
+            }
+        }
+}
+
