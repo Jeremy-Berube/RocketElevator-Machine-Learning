@@ -171,7 +171,7 @@
 
                         <div class="heading-title col-md-10">
                             <label>Identified Person</label>&nbsp;
-                            <input type="text" size="30" name="person_identify" id="" class="form-input-fields" readonly>
+                            <input type="text" size="30" name="person_identify" id="" class="form-input-fields" value="<%= @test %>" readonly>
                             &nbsp;
                         </div>
                         <br/><br/><br/>
@@ -190,7 +190,7 @@
                 
                     <center>
                         <div class="col-md-6">
-							<textarea required maxlength="10000" rows="5" class="form-control" name="speech_to_text" id="" value="" readonly></textarea>
+							<textarea required maxlength="10000" rows="5" class="form-control" id="speechToText" name="speech_to_text" readonly></textarea>
 						</div>
                     </center>
                 <!-- /SPEECH TO TEXT -->
@@ -268,62 +268,23 @@
 
         <script>
             $('#audio1').on('click', ()=>{
-            var audio = $('#sequence_1').get(0);
-            audio.paused? audio.play():audio.pause()
-            audio.paused? $('#audio1').text('PLAY'):$('#audio1').text('PAUSE')
+                var audio = $('#sequence_1').get(0);
+                audio.paused? audio.play():audio.pause()
+                audio.paused? $('#audio1').text('PLAY'):$('#audio1').text('PAUSE')
+
+                $.ajax({
+                    url:"/speech_to_text",
+                    method: "GET",
+                    error: function (xhr, status, error) {
+                    console.error('AJAX Error: ' + status + error);
+                    },
+                    success: function (response) {
+
+                    console.log("Response: ", response);
+                    // $('#speechToText').append()
+                    }
+                })
             })
 
-             $('#audio2').on('click', ()=>{
-            var audio = $('#sequence_2').get(0);
-            audio.paused? audio.play():audio.pause()
-            audio.paused? $('#audio2').text('PLAY'):$('#audio2').text('PAUSE')
-            })
 
-             $('#audio3').on('click', ()=>{
-            var audio = $('#sequence_3').get(0);
-            audio.paused? audio.play():audio.pause()
-            audio.paused? $('#audio3').text('PLAY'):$('#audio3').text('PAUSE')
-            })
-
-             $('#audio4').on('click', ()=>{
-            var audio = $('#sequence_4').get(0);
-            audio.paused? audio.play():audio.pause()
-            audio.paused? $('#audio4').text('PLAY'):$('#audio4').text('PAUSE')
-            })
-
-             $('#audio5').on('click', ()=>{
-            var audio = $('#sequence_5').get(0);
-            audio.paused? audio.play():audio.pause()
-            audio.paused? $('#audio5').text('PLAY'):$('#audio5').text('PAUSE')
-            })
-
-             $('#audio6').on('click', ()=>{
-            var audio = $('#sequence_6').get(0);
-            audio.paused? audio.play():audio.pause()
-            audio.paused? $('#audio6').text('PLAY'):$('#audio6').text('PAUSE')
-            })
-
-            $('#audio7').on('click', ()=>{
-            var audio = $('#sequence_7').get(0);
-            audio.paused? audio.play():audio.pause()
-            audio.paused? $('#audio7').text('PLAY'):$('#audio7').text('PAUSE')
-            })
-
-             $('#audio8').on('click', ()=>{
-            var audio = $('#sequence_8').get(0);
-            audio.paused? audio.play():audio.pause()
-            audio.paused? $('#audio8').text('PLAY'):$('#audio8').text('PAUSE')
-            })
-
-             $('#audio9').on('click', ()=>{
-            var audio = $('#sequence_9').get(0);
-            audio.paused? audio.play():audio.pause()
-            audio.paused? $('#audio1').text('PLAY'):$('#audio9').text('PAUSE')
-            })
-
-             $('#audio10').on('click', ()=>{
-            var audio = $('#sequence_10').get(0);
-            audio.paused? audio.play():audio.pause()
-            audio.paused? $('#audio10').text('PLAY'):$('#audio10').text('PAUSE')
-            })
         </script>
