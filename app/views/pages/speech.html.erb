@@ -170,31 +170,36 @@
 
 
             <!-- GIRLS DANCING AND SINGING -->
+            <!-->
             <div class="slider fullwidthbanner-container roundedcorners">
 				<div id="" class="fullwidthbanner" data-height="500">
 					<ul class="hide">
 						<li data-transition="parallaxtobottom" >
+                        -->
 							<!-- MAIN IMAGE -->
-							<img src="/assets/gif_elevator02cropped2.gif"  alt="Gif: girls dancing and singing"  data-bgposition="center" data-bgfit="cover" data-bgrepeat="no-repeat">
+							<!--<img src="/assets/gif_elevator02cropped2.gif"  alt="Gif: girls dancing and singing"  data-bgposition="center" data-bgfit="cover" data-bgrepeat="no-repeat">
                             <div class="overlay dark-4"></div>
 						</li>
 					</ul>
 				</div>
 			</div>
+            -->
             <!-- /GIRLS DANCING AND SINGING -->
 
 
             <!-- FOUNDATION -->
-                <br/>
-                <div class="container">
+			<section class="parallax parallax-1" style="background-image: url(<%= image_path "gif_elevator02cropped2.gif"%>)">
+            <div class="overlay dark-5"></div>
+				<div class="container">
 					<div class="text-center">
 						<h2 class="fs-40 fw-300">Elevating Quality Since 1976</h2>
-                        <%= link_to "CONTACT US",root_path(:anchor => "contact"), class:"btn btn-primary btn-lg" %>
+						<%= link_to "GET A QUOTE",pages_quote_url, class: "btn btn-default btn-lg" %>
+						
+						<a class="btn btn-primary btn-lg" href="#contact">CONTACT US <i class="fa fa-angle-right"></i></a>
 					</div>
 				</div>
-                <br/><br/><br/>
-            <!-- /FOUNDATION -->
-            
+			</section>
+			<!-- /FOUNDATION -->            
 
             
             <!-- FOOTER -->
