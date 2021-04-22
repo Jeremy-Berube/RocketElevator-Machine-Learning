@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get 'pages/residential'
   get 'pages/quote'
   get 'pages/intervention'
-  get 'pages/cognitive'
   get 'pages/speech'
   get 'update_buildings', to: 'interventions#update_buildings'
   get 'update_battery', to: 'interventions#update_battery'
@@ -19,15 +18,14 @@ Rails.application.routes.draw do
   get 'dropbox/auth_callback' => 'dropbox#auth_callback'
 
  
-  get 'create_profile', to: 'cognitive#create_profile'
-
-  resources :cognitive
+  
   resources :quotes
   resources :leads
   resources :interventions 
   
+  post 'create_profile', to: 'speech#create_profile'
   post '/leads', to: 'leads#create'
   post '/interventions', to: 'interventions#create'
-  post '/speech', to: 'speech#speech_to_text', as: 'speech'
+  post '/speech', to: 'speech#speech_to_text'
 end
 

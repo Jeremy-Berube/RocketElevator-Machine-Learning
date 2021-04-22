@@ -1,4 +1,4 @@
-<div id="wrapper">
+<%# <div id="wrapper">
 
 			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
 
@@ -90,6 +90,35 @@
 				</span>
 			</button>
             <!-- INTRO -->
+            
+                <!-- AUDIO RECOGNITION -->
+                <div class="container">
+                    <div id="" class="heading-title heading-dotted text-center">
+						<h2>Audio Recognition</h2>
+                    </div>
+                </div>
+                <div id="customer" class="col-md-4">
+                            Profile ID : 
+                            <pre><%= @profile %></pre>
+                        </div>
+
+                        <br>
+
+                        <div class="col-md-4">
+                        
+                        <%= button_tag "Do It", type: 'button', onclick: "getProfile()", class: 'btn btn-default' %>
+                        </div>
+
+                                                <%# sirine  %>
+                        <div>
+                        <button id="sirine"class="btn btn-default" type="button" >update</button>
+                </div>
+                                        
+
+ 
+
+
+                <!-- /AUDIO RECOGNITION -->
 
 
             <!-- AUDIO PROCESSING -->
@@ -106,7 +135,7 @@
                 <div>
                     <center>
                     <!-- audio #1-->
-                        <%= button_to 'AUDIO 1', speech_path, {method: :post, id:"audio1"} %>
+                        <button id="audio1">AUDIO1</button>
 
                         <audio id = "sequence_1">
                             <source src="<%= audio_path 'sequence1.wav'%>">
@@ -268,18 +297,18 @@
 
         <script>
             $('#audio1').on('click', ()=>{
-                var audio = $('#sequence_1').get(0);
-                audio.paused? audio.play():audio.pause()
-                audio.paused? $('#audio1').text('PLAY'):$('#audio1').text('PAUSE')
-
+                // var audio = $('#sequence_1').get(0);
+                // audio.paused? audio.play():audio.pause()
+                // audio.paused? $('#audio1').text('PLAY'):$('#audio1').text('PAUSE')
+                console.log("test123")
                 $.ajax({
-                    url:"/speech_to_text",
-                    method: "GET",
+                    url:"/speech",
+                    method: "POST",
+                    dataType: "json",
                     error: function (xhr, status, error) {
                     console.error('AJAX Error: ' + status + error);
                     },
                     success: function (response) {
-
                     console.log("Response: ", response);
                     // $('#speechToText').append()
                     }
@@ -287,4 +316,4 @@
             })
 
 
-        </script>
+        </script> %>
