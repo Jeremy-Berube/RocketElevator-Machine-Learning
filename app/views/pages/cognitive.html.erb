@@ -66,9 +66,12 @@
 
                         <div class="col-md-4">
                         
-<%= button_tag "Do It", type: 'button', onclick: "javascript:getProfile()", class: 'btn btn-default' %>
+<%= button_tag "Do It", type: 'button', onclick: "getProfile()", class: 'btn btn-default' %>
+</div>
 
-<button id="4"class="btn btn-default" type="button" onclick: "javascript:getProfile()">update</button>
+                        <%# sirine  %>
+<div>
+<button id="sirine"class="btn btn-default" type="button" >update</button>
    </div>
                 
 
@@ -178,26 +181,14 @@ function getProfile() {
         $.ajax({
             url: "/create_profile",
             method: "GET",
-            data: 
             dataType: "json",
             success: function (response) {
                 console.log("Profile created : " + response);
+            },error: function (request, status, error) {
+                alert(request.responseText);
             }
         })
 }
-$(document).ready(function () {
-    $('#4').click(function() {
 
-        console.log("JS before calling ajax " );
-        $.ajax({
-            url: "/create_profile",
-            method: "GET",
-            data: 
-            dataType: "json",
-            success: function (response) {
-                console.log("Profile created : " + response);
-            }
-        });
-}};
   </script>
 

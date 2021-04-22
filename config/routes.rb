@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'update_column', to: 'interventions#update_column'
   get 'update_elevator', to: 'interventions#update_elevator'
   get 'dropbox/auth_callback' => 'dropbox#auth_callback'
+ 
   get 'create_profile', to: 'cognitive#create_profile'
 
   resources :cognitive
