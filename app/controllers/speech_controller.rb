@@ -1,44 +1,42 @@
 class SpeechController < ApplicationController
-    
-    # GET Get Transcription
+    require 'json'
+    require 'openssl'
     require 'net/http'
 
-    uri = URI('https://westus.api.cognitive.microsoft.com/speechtotext/v3.0/transcriptions/{id}')
-    uri.query = URI.encode_www_form({
-    })
+    def speech_to_text 
+        # uri = URI('https://eastus.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=fr-CA')
+        # uri.query = URI.encode_www_form({
+        # })
+        
+        # request = Net::HTTP::Post.new(uri.request_uri)
+        # # Request headers
+        # request['Ocp-Apim-Subscription-Key'] = '34110eb8965c476a94efd2fd033a8981'
+        # # Request body
+        # request.body = "audio/sequence1.wav"
+        
+        # response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
+        #     http.request(request)
+        # end
+        
+        #  puts response.body
+        uri = URI('https://eastus.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=fr-CA')
 
-    request = Net::HTTP::Get.new(uri.request_uri)
-    # Request headers
-    request['Ocp-Apim-Subscription-Key'] = '{subscription key}'
-    # Request body
-    request.body = "{body}"
+        http = Net::HTTP.new(uri.host, uri.port)
+        http.use_ssl = true
 
-    response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
+        request = Net::HTTP::Post.new(
+        uri,
+        'Ocp-Apim-Subscription-Key' => '34110eb8965c476a94efd2fd033a8981',
+        'Content-Type' => 'audio/wav',
+        'transfer-encoding' => 'chunked'
+        )
+
+        request.body_stream = File.open('app/assets/audios/sequence1.wav', 'wb')
+
+        response = http.start do |http|
         http.request(request)
-    end
-
-    puts response.body
-
-
-
-    # POST Create Transcription
-    require 'net/http'
-
-    uri = URI('https://westus.api.cognitive.microsoft.com/speechtotext/v3.0/transcriptions')
-    uri.query = URI.encode_www_form({
-    })
-    
-    request = Net::HTTP::Post.new(uri.request_uri)
-    # Request headers
-    request['Content-Type'] = 'application/json'
-    # Request headers
-    request['Ocp-Apim-Subscription-Key'] = '{subscription key}'
-    # Request body
-    request.body = "{body}"
-    
-    response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
-        http.request(request)
+        end
+        puts response.read_body
     end
     
-    puts response.body
 end

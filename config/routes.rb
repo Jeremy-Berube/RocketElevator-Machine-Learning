@@ -24,6 +24,6 @@ Rails.application.routes.draw do
   
   post '/leads', to: 'leads#create'
   post '/interventions', to: 'interventions#create'
-
+  post '/speech', to: 'speech#speech_to_text', as: 'speech'
 end
 
