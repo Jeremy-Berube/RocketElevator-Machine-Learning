@@ -20,7 +20,7 @@ require "net/http"
         # Request headers
         request['Ocp-Apim-Subscription-Key'] = "11844387abab4fe8912bbf53d3ee75fe"
         # Request body
-        request.body = "{body}"
+        request.body = "{'locale':'en-us',}"
         
         response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
             http.request(request)
