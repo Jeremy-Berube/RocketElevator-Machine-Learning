@@ -142,6 +142,7 @@ gem 'recaptcha', require: 'recaptcha/rails'
 
 gem 'quotify'
 
+
 # Speech to text
 # gem 'azure-tts', '~> 1.0'
 gem 'azure_mgmt_cognitive_services', '~> 0.19.4'
