@@ -73,7 +73,7 @@
 
 			<!-- INTRO -->
 			<div class="slider fullwidthbanner-container roundedcorners">
-				<div id="home" class="fullwidthbanner" data-delay="0" data-height="600" data-shadow="0" data-navigationStyle="preview2">
+				<div id="home" class="fullwidthbanner" data-delay="0" data-height="500" data-shadow="0" data-navigationStyle="preview2">
 					<ul class="hide">
 						<li data-transition="parallaxtobottom" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off"  data-title="Our Values">
 							<!-- MAIN IMAGE -->
@@ -96,138 +96,134 @@
             <section id="audio_recognition">
 
 
-            <!-- SPEECH TO TEXT -->
-                <div class="container">
-                    <div id="" class="heading-title heading-dotted text-center">
-						<h2>Speech to Text</h2>
-                    </div>
-                </div>
-                
-                <%= form_with url: "/interventions", local: true do |f| %>
-
-                    <center>
-                        <!--
-                        <div id="customer" class="col-md-4">
-                            <%= f.label :audio %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
-                        </div>
-                        <br>
-                        <div id="employee" class="col-md-4">
-                            <%= f.label :employee %>
-                            <%= f.collection_select :employee_id, Employee.all, :id, :id, include_blank: true %>
-                        </div>
-                        <br>
-                        -->
-                        <div class="col-md-4">
-							<%= f.label :text %>
-							<textarea required maxlength="10000" rows="3" class="form-control" name="description" id="description"></textarea>
-						</div>
-                        <br>
-                        <div class="col-md-4">
-                            <%= f.submit "SUBMIT", class: "btn btn-primary" %>
-                        </div>
-                    </center>
-                    
-                <% end %>
-                <!-- /SPEECH TO TEXT -->
-
-                <br/> <br/> <br/>
-
                 <!-- AUDIO RECOGNITION -->
                 <div class="container">
                     <div id="" class="heading-title heading-dotted text-center">
 						<h2>Audio Recognition</h2>
                     </div>
                 </div>
-                
-                <%= form_with url: "/interventions", local: true do |f| %>
 
+                <div>
                     <center>
-                        <div id="customer" class="col-md-4">
-                            <%= f.label :audio_01 %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
-                        </div>
-                        <br>
-                        <div id="customer" class="col-md-4">
-                            <%= f.label :audio_02 %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
-                        </div>
-                        <br>
-                        <div id="customer" class="col-md-4">
-                            <%= f.label :audio_03 %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
-                        </div>
-                        <br>
-                        <div id="customer" class="col-md-4">
-                            <%= f.label :audio_04 %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
-                        </div>
-                        <br>
-                        <div id="customer" class="col-md-4">
-                            <%= f.label :audio_05 %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
-                        </div>
-                        <br>
-                        <div id="customer" class="col-md-4">
-                            <%= f.label :audio_06 %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
-                        </div>
-                        <br>
-                        <div id="customer" class="col-md-4">
-                            <%= f.label :audio_07 %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
-                        </div>
-                        <br>
-                        <div id="customer" class="col-md-4">
-                            <%= f.label :audio_08 %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
-                        </div>
-                        <br>
-                        <div id="customer" class="col-md-4">
-                            <%= f.label :audio_09 %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
-                        </div>
-                        <br>
-                        <div id="customer" class="col-md-4">
-                            <%= f.label :audio_10 %>
-                            <%= f.collection_select :customer_id, Customer.all, :id, :full_name_company_contact, {}, {include_blank: true, required: true} %>
-                        </div>
-                        <br>
-                        <!--
-                        <div id="employee" class="col-md-4">
-                            <%= f.label :employee %>
-                            <%= f.collection_select :employee_id, Employee.all, :id, :id, include_blank: true %>
-                        </div>
-                        <br>
-                        <div class="col-md-4">
-							<%= f.label :description %>
-							<textarea required maxlength="10000" rows="3" class="form-control" name="description" id="description"></textarea>
-						</div>
-                        <br>
-                        -->
-                        <div class="col-md-4">
-                            <%= f.submit "SUBMIT", class: "btn btn-primary" %>
-                        </div>
-                    </center>
+                    <!-- audio #1-->
+                        <%= button_to 'AUDIO 1', speech_path, {method: :post, id:"audio1"} %>
 
-                <% end %>
+                        <audio id = "sequence_1">
+                            <source src="<%= audio_path 'sequence1.wav'%>">
+                        </audio>
+                    <!-- audio #2-->
+                        <button class="btn btn-light btn-lg" id="audio2" type="submit">AUDIO 2</button>
+
+                        <audio id = "sequence_2">
+                            <source src="<%= audio_path 'sequence2.wav'%>">
+                        </audio>
+                    <!-- audio #3-->
+                        <button class="btn btn-light btn-lg" id="audio3" type="submit">AUDIO 3</button>
+
+                        <audio id = "sequence_3">
+                            <source src="<%= audio_path 'sequence3.wav'%>">
+                        </audio>
+                    <!-- audio #4-->
+                        <button class="btn btn-light btn-lg" id="audio4" type="submit">AUDIO 4</button>
+
+                        <audio id = "sequence_4">
+                            <source src="<%= audio_path 'sequence4.wav'%>">
+                        </audio>
+                    <!-- audio #5-->
+                        <button class="btn btn-light btn-lg" id="audio5" type="submit">AUDIO 5</button>
+
+                        <audio id = "sequence_5">
+                            <source src="<%= audio_path 'sequence5.wav'%>">
+                        </audio>
+                    <!-- audio #6-->
+                        <button class="btn btn-light btn-lg" id="audio6" type="submit">AUDIO 6</button>
+
+                        <audio id = "sequence_6">
+                            <source src="<%= audio_path 'sequence6.wav'%>">
+                        </audio>
+                    <!-- audio #7-->
+                        <button class="btn btn-light btn-lg" id="audio7" type="submit">AUDIO 7</button>
+
+                        <audio id = "sequence_7">
+                            <source src="<%= audio_path 'sequence7.wav'%>">
+                        </audio>
+                    <!-- audio #8-->
+                        <button class="btn btn-light btn-lg" id="audio8" type="submit">AUDIO 8</button>
+
+                        <audio id = "sequence_8">
+                            <source src="<%= audio_path 'sequence8.wav'%>">
+                        </audio>
+                    <!-- audio #9-->
+                        <button class="btn btn-light btn-lg" id="audio9" type="submit">AUDIO 9</button>
+
+                        <audio id = "sequence_9">
+                            <source src="<%= audio_path 'sequence9.wav'%>">
+                        </audio>
+                    <!-- audio #10-->
+                        <button class="btn btn-light btn-lg" id="audio10" type="submit">AUDIO 10</button>
+
+                        <audio id = "sequence_10">
+                            <source src="<%= audio_path 'sequence10.wav'%>">
+                        </audio>
+
+                        <br/><br/><br/>
+
+
+                        <div class="heading-title col-md-10">
+                            <label>Identified Person</label>&nbsp;
+                            <input type="text" size="30" name="person_identify" id="" class="form-input-fields" value="<%= @test %>" readonly>
+                            &nbsp;
+                        </div>
+                        <br/><br/><br/>
+                    </center>
+                </div>
                 <!-- /AUDIO RECOGNITION -->
+
+
+
+                <!-- SPEECH TO TEXT -->
+                <div class="container">
+                    <div id="" class="heading-title heading-dotted text-center">
+						<h2>Speech to Text</h2>
+                    </div>
+                </div>
+                
+                    <center>
+                        <div class="col-md-6">
+							<textarea required maxlength="10000" rows="5" class="form-control" id="speechToText" name="speech_to_text" readonly></textarea>
+						</div>
+                    </center>
+                <!-- /SPEECH TO TEXT -->
 
 
             </section>
             <!-- /AUDIO PROCESSING -->
 
 
+            <!-- GIRLS DANCING AND SINGING -->
+            <div class="slider fullwidthbanner-container roundedcorners">
+				<div id="home" class="fullwidthbanner" data-height="500">
+					<ul class="hide">
+						<li data-transition="parallaxtobottom" >
+							<!-- MAIN IMAGE -->
+							<img src="/assets/gif_elevator02cropped2.gif"  alt="Gif: girls dancing and singing"  data-bgposition="center" data-bgfit="cover" data-bgrepeat="no-repeat">
+                            <div class="overlay dark-4"></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+            <!-- /GIRLS DANCING AND SINGING -->
+
+
             <!-- FOUNDATION -->
-			    <section class="parallax parallax-1" style="background-image: url(<%= image_path "elavator-cityview-crop.jpg"%>)">
-				<div class="overlay dark-5"></div>
-				<div class="container">
+                <br/>
+                <div class="container">
 					<div class="text-center">
 						<h2 class="fs-40 fw-300">Elevating Quality Since 1976</h2>
                         <%= link_to "CONTACT US",root_path(:anchor => "contact"), class:"btn btn-primary btn-lg" %>
 					</div>
 				</div>
-            </section>
+                <br/><br/><br/>
             <!-- /FOUNDATION -->
             
 
@@ -271,5 +267,24 @@
 		<a href="#" id="toTop"></a>
 
         <script>
+            $('#audio1').on('click', ()=>{
+                var audio = $('#sequence_1').get(0);
+                audio.paused? audio.play():audio.pause()
+                audio.paused? $('#audio1').text('PLAY'):$('#audio1').text('PAUSE')
+
+                $.ajax({
+                    url:"/speech_to_text",
+                    method: "GET",
+                    error: function (xhr, status, error) {
+                    console.error('AJAX Error: ' + status + error);
+                    },
+                    success: function (response) {
+
+                    console.log("Response: ", response);
+                    // $('#speechToText').append()
+                    }
+                })
+            })
+
 
         </script>

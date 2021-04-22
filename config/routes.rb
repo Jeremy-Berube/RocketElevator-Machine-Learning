@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'update_column', to: 'interventions#update_column'
   get 'update_elevator', to: 'interventions#update_elevator'
   get 'dropbox/auth_callback' => 'dropbox#auth_callback'
+
  
   get 'create_profile', to: 'cognitive#create_profile'
 
@@ -27,6 +28,6 @@ Rails.application.routes.draw do
   
   post '/leads', to: 'leads#create'
   post '/interventions', to: 'interventions#create'
-
+  post '/speech', to: 'speech#speech_to_text', as: 'speech'
 end
 
