@@ -103,18 +103,69 @@
                     </div>
                 </div>
 
-                <%= form_with url: "/speech", local: true do |f| %>
+                <div>
                     <center>
-                        <button class="btn btn-light btn-lg" id="audio1" type="submit">AUDIO 1</button>
+                    <!-- audio #1-->
+                        <%= button_to 'AUDIO 1', speech_path, {method: :post, id:"audio1"} %>
+
+                        <audio id = "sequence_1">
+                            <source src="<%= audio_path 'sequence1.wav'%>">
+                        </audio>
+                    <!-- audio #2-->
                         <button class="btn btn-light btn-lg" id="audio2" type="submit">AUDIO 2</button>
+
+                        <audio id = "sequence_2">
+                            <source src="<%= audio_path 'sequence2.wav'%>">
+                        </audio>
+                    <!-- audio #3-->
                         <button class="btn btn-light btn-lg" id="audio3" type="submit">AUDIO 3</button>
+
+                        <audio id = "sequence_3">
+                            <source src="<%= audio_path 'sequence3.wav'%>">
+                        </audio>
+                    <!-- audio #4-->
                         <button class="btn btn-light btn-lg" id="audio4" type="submit">AUDIO 4</button>
+
+                        <audio id = "sequence_4">
+                            <source src="<%= audio_path 'sequence4.wav'%>">
+                        </audio>
+                    <!-- audio #5-->
                         <button class="btn btn-light btn-lg" id="audio5" type="submit">AUDIO 5</button>
+
+                        <audio id = "sequence_5">
+                            <source src="<%= audio_path 'sequence5.wav'%>">
+                        </audio>
+                    <!-- audio #6-->
                         <button class="btn btn-light btn-lg" id="audio6" type="submit">AUDIO 6</button>
+
+                        <audio id = "sequence_6">
+                            <source src="<%= audio_path 'sequence6.wav'%>">
+                        </audio>
+                    <!-- audio #7-->
                         <button class="btn btn-light btn-lg" id="audio7" type="submit">AUDIO 7</button>
+
+                        <audio id = "sequence_7">
+                            <source src="<%= audio_path 'sequence7.wav'%>">
+                        </audio>
+                    <!-- audio #8-->
                         <button class="btn btn-light btn-lg" id="audio8" type="submit">AUDIO 8</button>
+
+                        <audio id = "sequence_8">
+                            <source src="<%= audio_path 'sequence8.wav'%>">
+                        </audio>
+                    <!-- audio #9-->
                         <button class="btn btn-light btn-lg" id="audio9" type="submit">AUDIO 9</button>
+
+                        <audio id = "sequence_9">
+                            <source src="<%= audio_path 'sequence9.wav'%>">
+                        </audio>
+                    <!-- audio #10-->
                         <button class="btn btn-light btn-lg" id="audio10" type="submit">AUDIO 10</button>
+
+                        <audio id = "sequence_10">
+                            <source src="<%= audio_path 'sequence10.wav'%>">
+                        </audio>
+
                         <br/><br/><br/>
 
 
@@ -123,14 +174,9 @@
                             <input type="text" size="30" name="person_identify" id="" class="form-input-fields" readonly>
                             &nbsp;
                         </div>
-                        <!--
-                        <div class="col-md-6">
-							<%= f.label :result %>
-							<textarea required maxlength="10000" rows="8" class="form-control" name="result" id="" readonly></textarea>
-						</div>-->
                         <br/><br/><br/>
                     </center>
-                <% end %>
+                </div>
                 <!-- /AUDIO RECOGNITION -->
 
 
@@ -142,14 +188,11 @@
                     </div>
                 </div>
                 
-                <%= form_with url: "/interventions", local: true do |f| %>
                     <center>
                         <div class="col-md-6">
-							<%= f.label :text %>
-							<textarea required maxlength="10000" rows="5" class="form-control" name="speech_to_text" id="" readonly></textarea>
+							<textarea required maxlength="10000" rows="5" class="form-control" name="speech_to_text" id="" value="" readonly></textarea>
 						</div>
                     </center>
-                <% end %>
                 <!-- /SPEECH TO TEXT -->
 
 
@@ -224,5 +267,63 @@
 		<a href="#" id="toTop"></a>
 
         <script>
+            $('#audio1').on('click', ()=>{
+            var audio = $('#sequence_1').get(0);
+            audio.paused? audio.play():audio.pause()
+            audio.paused? $('#audio1').text('PLAY'):$('#audio1').text('PAUSE')
+            })
 
+             $('#audio2').on('click', ()=>{
+            var audio = $('#sequence_2').get(0);
+            audio.paused? audio.play():audio.pause()
+            audio.paused? $('#audio2').text('PLAY'):$('#audio2').text('PAUSE')
+            })
+
+             $('#audio3').on('click', ()=>{
+            var audio = $('#sequence_3').get(0);
+            audio.paused? audio.play():audio.pause()
+            audio.paused? $('#audio3').text('PLAY'):$('#audio3').text('PAUSE')
+            })
+
+             $('#audio4').on('click', ()=>{
+            var audio = $('#sequence_4').get(0);
+            audio.paused? audio.play():audio.pause()
+            audio.paused? $('#audio4').text('PLAY'):$('#audio4').text('PAUSE')
+            })
+
+             $('#audio5').on('click', ()=>{
+            var audio = $('#sequence_5').get(0);
+            audio.paused? audio.play():audio.pause()
+            audio.paused? $('#audio5').text('PLAY'):$('#audio5').text('PAUSE')
+            })
+
+             $('#audio6').on('click', ()=>{
+            var audio = $('#sequence_6').get(0);
+            audio.paused? audio.play():audio.pause()
+            audio.paused? $('#audio6').text('PLAY'):$('#audio6').text('PAUSE')
+            })
+
+            $('#audio7').on('click', ()=>{
+            var audio = $('#sequence_7').get(0);
+            audio.paused? audio.play():audio.pause()
+            audio.paused? $('#audio7').text('PLAY'):$('#audio7').text('PAUSE')
+            })
+
+             $('#audio8').on('click', ()=>{
+            var audio = $('#sequence_8').get(0);
+            audio.paused? audio.play():audio.pause()
+            audio.paused? $('#audio8').text('PLAY'):$('#audio8').text('PAUSE')
+            })
+
+             $('#audio9').on('click', ()=>{
+            var audio = $('#sequence_9').get(0);
+            audio.paused? audio.play():audio.pause()
+            audio.paused? $('#audio1').text('PLAY'):$('#audio9').text('PAUSE')
+            })
+
+             $('#audio10').on('click', ()=>{
+            var audio = $('#sequence_10').get(0);
+            audio.paused? audio.play():audio.pause()
+            audio.paused? $('#audio10').text('PLAY'):$('#audio10').text('PAUSE')
+            })
         </script>
