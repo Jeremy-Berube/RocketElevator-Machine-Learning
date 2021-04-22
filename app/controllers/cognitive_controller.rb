@@ -6,7 +6,7 @@ require "net/http"
 
     def create_profile
 
-        puts "tests ...................................................................."
+        
 
 
 
@@ -27,8 +27,10 @@ require "net/http"
         end
         
         puts response.body
-        @profile = response.read_body
-        render json: {profile: @profile}
+        @profile = JSON.parse(response.body)
+        puts @profile['identificationProfileId']
+        puts '----------------------------------------'
+        render json: {identificationProfileId: @profile['identificationProfileId']}
         
     end
 

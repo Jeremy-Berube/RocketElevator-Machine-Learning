@@ -183,7 +183,8 @@ function getProfile() {
             method: "GET",
             dataType: "json",
             success: function (response) {
-                console.log("Profile created : " + response);
+                console.log(response.identificationProfileId);
+
             },error: function (request, status, error) {
                 alert(request.responseText);
             }
