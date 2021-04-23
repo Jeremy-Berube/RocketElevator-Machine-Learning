@@ -28,7 +28,7 @@ require "net/http"
         
         puts response.body
         @profile = JSON.parse(response.body)
-        puts @profile['identificationProfileId']
+        puts @profile['identificationProfileId']  
         puts '----------------------------------------'
         render json: {identificationProfileId: @profile['identificationProfileId']}
         

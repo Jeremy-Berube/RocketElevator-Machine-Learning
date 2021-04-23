@@ -59,20 +59,19 @@
 
                         <div id="customer" class="col-md-4">
                             Profile ID : 
-                            <pre><%= @profile %></pre>
+                            
+                            <input type="text" class="form-control"  name = "profile_id" id="profile_id"  value="" />
                         </div>
 
                         <br>
 
                         <div class="col-md-4">
                         
-<%= button_tag "Do It", type: 'button', onclick: "getProfile()", class: 'btn btn-default' %>
+<%= button_tag "Get Profile ID", type: 'button', onclick: "getProfile()", class: 'btn btn-default' %>
 </div>
 
                         <%# sirine  %>
-<div>
-<button id="sirine"class="btn btn-default" type="button" >update</button>
-   </div>
+
                 
 
  
@@ -184,6 +183,7 @@ function getProfile() {
             dataType: "json",
             success: function (response) {
                 console.log(response.identificationProfileId);
+                $("#profile_id").val(response.identificationProfileId);
 
             },error: function (request, status, error) {
                 alert(request.responseText);
