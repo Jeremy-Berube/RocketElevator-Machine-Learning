@@ -91,36 +91,6 @@
 			</button>
             <!-- INTRO -->
             
-                <!-- AUDIO RECOGNITION -->
-                <div class="container">
-                    <div id="" class="heading-title heading-dotted text-center">
-						<h2>Audio Recognition</h2>
-                    </div>
-                </div>
-                <div id="customer" class="col-md-4">
-                            Profile ID : 
-                            <pre><%= @profile %></pre>
-                        </div>
-
-                        <br>
-
-                        <div class="col-md-4">
-                        
-                        <%= button_tag "Do It", type: 'button', onclick: "getProfile()", class: 'btn btn-default' %>
-                        </div>
-
-                                                <%# sirine  %>
-                        <div>
-                        <button id="sirine"class="btn btn-default" type="button" >update</button>
-                </div>
-                                        
-
- 
-
-
-                <!-- /AUDIO RECOGNITION -->
-
-
             <!-- AUDIO PROCESSING -->
             <section id="audio_recognition">
 
@@ -135,61 +105,61 @@
                 <div>
                     <center>
                     <!-- audio #1-->
-                        <button id="audio1">AUDIO1</button>
+                        <%= button_tag "AUDIO1", id: "audio1" , type: 'button', class: 'btn btn-default' %>
 
                         <audio id = "sequence_1">
                             <source src="<%= audio_path 'sequence1.wav'%>">
                         </audio>
                     <!-- audio #2-->
-                        <button class="btn btn-light btn-lg" id="audio2" type="submit">AUDIO 2</button>
+                        <%= button_tag "AUDIO2", id: "audio2" , type: 'button', class: 'btn btn-default' %>
 
                         <audio id = "sequence_2">
                             <source src="<%= audio_path 'sequence2.wav'%>">
                         </audio>
                     <!-- audio #3-->
-                        <button class="btn btn-light btn-lg" id="audio3" type="submit">AUDIO 3</button>
+                        <%= button_tag "AUDIO3", id: "audio3" , type: 'button', class: 'btn btn-default' %>
 
                         <audio id = "sequence_3">
                             <source src="<%= audio_path 'sequence3.wav'%>">
                         </audio>
                     <!-- audio #4-->
-                        <button class="btn btn-light btn-lg" id="audio4" type="submit">AUDIO 4</button>
+                        <%= button_tag "AUDIO4", id: "audio4" , type: 'button', class: 'btn btn-default' %>
 
                         <audio id = "sequence_4">
                             <source src="<%= audio_path 'sequence4.wav'%>">
                         </audio>
                     <!-- audio #5-->
-                        <button class="btn btn-light btn-lg" id="audio5" type="submit">AUDIO 5</button>
+                        <%= button_tag "AUDIO5", id: "audio5" , type: 'button', class: 'btn btn-default' %>
 
                         <audio id = "sequence_5">
                             <source src="<%= audio_path 'sequence5.wav'%>">
                         </audio>
                     <!-- audio #6-->
-                        <button class="btn btn-light btn-lg" id="audio6" type="submit">AUDIO 6</button>
+                        <%= button_tag "AUDIO6", id: "audio6" , type: 'button', class: 'btn btn-default' %>
 
                         <audio id = "sequence_6">
                             <source src="<%= audio_path 'sequence6.wav'%>">
                         </audio>
                     <!-- audio #7-->
-                        <button class="btn btn-light btn-lg" id="audio7" type="submit">AUDIO 7</button>
+                        <%= button_tag "AUDIO7", id: "audio7" , type: 'button', class: 'btn btn-default' %>
 
                         <audio id = "sequence_7">
                             <source src="<%= audio_path 'sequence7.wav'%>">
                         </audio>
                     <!-- audio #8-->
-                        <button class="btn btn-light btn-lg" id="audio8" type="submit">AUDIO 8</button>
+                        <%= button_tag "AUDIO8", id: "audio8" , type: 'button', class: 'btn btn-default' %>
 
                         <audio id = "sequence_8">
                             <source src="<%= audio_path 'sequence8.wav'%>">
                         </audio>
                     <!-- audio #9-->
-                        <button class="btn btn-light btn-lg" id="audio9" type="submit">AUDIO 9</button>
+                        <%= button_tag "AUDIO9", id: "audio9" , type: 'button', class: 'btn btn-default' %>
 
                         <audio id = "sequence_9">
                             <source src="<%= audio_path 'sequence9.wav'%>">
                         </audio>
                     <!-- audio #10-->
-                        <button class="btn btn-light btn-lg" id="audio10" type="submit">AUDIO 10</button>
+                        <%= button_tag "AUDIO10", id: "audio10" , type: 'button', class: 'btn btn-default' %>
 
                         <audio id = "sequence_10">
                             <source src="<%= audio_path 'sequence10.wav'%>">
@@ -198,9 +168,9 @@
                         <br/><br/><br/>
 
 
-                        <div class="heading-title col-md-10">
+                        <div class="heading-title col-md-6">
                             <label>Identified Person</label>&nbsp;
-                            <input type="text" size="30" name="person_identify" id="" class="form-input-fields" value="<%= @test %>" readonly>
+                            <textarea required maxlength="100" rows="1" class="form-control" id="recognizer" name="recognizer" readonly></textarea>
                             &nbsp;
                         </div>
                         <br/><br/><br/>
@@ -296,24 +266,335 @@
 		<a href="#" id="toTop"></a>
 
         <script>
+        //Audio 1
             $('#audio1').on('click', ()=>{
-                // var audio = $('#sequence_1').get(0);
-                // audio.paused? audio.play():audio.pause()
-                // audio.paused? $('#audio1').text('PLAY'):$('#audio1').text('PAUSE')
-                console.log("test123")
+                var audio = $('#sequence_1').get(0);
+                audio.paused? audio.play():audio.pause()
+                audio.paused? $('#audio1').text('PLAY'):$('#audio1').text('PAUSE')
+                
                 $.ajax({
-                    url:"/speech",
-                    method: "POST",
+                    url: "/audio_sequence_1",
+                    method: "GET",
                     dataType: "json",
-                    error: function (xhr, status, error) {
-                    console.error('AJAX Error: ' + status + error);
-                    },
                     success: function (response) {
-                    console.log("Response: ", response);
-                    // $('#speechToText').append()
+                        console.log(response.DisplayText);
+                        $("#speechToText").empty();
+                        $("#speechToText").append(response.DisplayText);
+
+                    },error: function (request, status, error) {
+                        alert(request.responseText);
+                    }
+                })
+                $.ajax({
+                    url: "/audio_recognizer_1",
+                    method: "GET",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response.profileId);
+                        $("#recognizer").empty();
+                        $("#recognizer").append(response.profileId);
+
+                    },error: function (request, status, error) {
+                        alert(request.responseText);
+                    }
+                })
+            })
+        //Audio 2
+            $('#audio2').on('click', ()=>{
+                var audio = $('#sequence_2').get(0);
+                audio.paused? audio.play():audio.pause()
+                audio.paused? $('#audio2').text('PLAY'):$('#audio2').text('PAUSE')
+                
+                $.ajax({
+                    url: "/audio_sequence_2",
+                    method: "GET",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response.DisplayText);
+                        $("#speechToText").empty();
+                        $("#speechToText").append(response.DisplayText);
+
+                    },error: function (request, status, error) {
+                        alert(request.responseText);
+                    }
+                })
+                $.ajax({
+                    url: "/audio_recognizer_2",
+                    method: "GET",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response.profileId);
+                        $("#recognizer").empty();
+                        $("#recognizer").append(response.profileId);
+
+                    },error: function (request, status, error) {
+                        alert(request.responseText);
+                    }
+                })
+            })
+        //Audio 3
+            $('#audio3').on('click', ()=>{
+                var audio = $('#sequence_3').get(0);
+                audio.paused? audio.play():audio.pause()
+                audio.paused? $('#audio3').text('PLAY'):$('#audio3').text('PAUSE')
+                
+                $.ajax({
+                    url: "/audio_sequence_3",
+                    method: "GET",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response.DisplayText);
+                        $("#speechToText").empty();
+                        $("#speechToText").append(response.DisplayText);
+
+                    },error: function (request, status, error) {
+                        alert(request.responseText);
+                    }
+                })
+                $.ajax({
+                    url: "/audio_recognizer_3",
+                    method: "GET",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response.profileId);
+                        $("#recognizer").empty();
+                        $("#recognizer").append(response.profileId);
+
+                    },error: function (request, status, error) {
+                        alert(request.responseText);
+                    }
+                })
+            })
+        //Audio 4
+            $('#audio4').on('click', ()=>{
+                var audio = $('#sequence_4').get(0);
+                audio.paused? audio.play():audio.pause()
+                audio.paused? $('#audio4').text('PLAY'):$('#audio4').text('PAUSE')
+                
+                $.ajax({
+                    url: "/audio_sequence_4",
+                    method: "GET",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response.DisplayText);
+                        $("#speechToText").empty();
+                        $("#speechToText").append(response.DisplayText);
+
+                    },error: function (request, status, error) {
+                        alert(request.responseText);
+                    }
+                })
+                $.ajax({
+                    url: "/audio_recognizer_4",
+                    method: "GET",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response.profileId);
+                        $("#recognizer").empty();
+                        $("#recognizer").append(response.profileId);
+
+                    },error: function (request, status, error) {
+                        alert(request.responseText);
+                    }
+                })
+            })
+        //Audio 5
+            $('#audio5').on('click', ()=>{
+                var audio = $('#sequence_5').get(0);
+                audio.paused? audio.play():audio.pause()
+                audio.paused? $('#audio5').text('PLAY'):$('#audio5').text('PAUSE')
+                
+                $.ajax({
+                    url: "/audio_sequence_5",
+                    method: "GET",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response.DisplayText);
+                        $("#speechToText").empty();
+                        $("#speechToText").append(response.DisplayText);
+
+                    },error: function (request, status, error) {
+                        alert(request.responseText);
+                    }
+                })
+                $.ajax({
+                    url: "/audio_recognizer_5",
+                    method: "GET",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response.profileId);
+                        $("#recognizer").empty();
+                        $("#recognizer").append(response.profileId);
+
+                    },error: function (request, status, error) {
+                        alert(request.responseText);
+                    }
+                })
+            })
+        //Audio 6
+            $('#audio6').on('click', ()=>{
+                var audio = $('#sequence_6').get(0);
+                audio.paused? audio.play():audio.pause()
+                audio.paused? $('#audio6').text('PLAY'):$('#audio6').text('PAUSE')
+                
+                $.ajax({
+                    url: "/audio_sequence_6",
+                    method: "GET",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response.DisplayText);
+                        $("#speechToText").empty();
+                        $("#speechToText").append(response.DisplayText);
+
+                    },error: function (request, status, error) {
+                        alert(request.responseText);
+                    }
+                })
+                 $.ajax({
+                    url: "/audio_recognizer_6",
+                    method: "GET",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response.profileId);
+                        $("#recognizer").empty();
+                        $("#recognizer").append(response.profileId);
+
+                    },error: function (request, status, error) {
+                        alert(request.responseText);
+                    }
+                })
+            })
+        //Audio 7
+            $('#audio7').on('click', ()=>{
+                var audio = $('#sequence_7').get(0);
+                audio.paused? audio.play():audio.pause()
+                audio.paused? $('#audio7').text('PLAY'):$('#audio7').text('PAUSE')
+                
+                $.ajax({
+                    url: "/audio_sequence_7",
+                    method: "GET",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response.DisplayText);
+                        $("#speechToText").empty();
+                        $("#speechToText").append(response.DisplayText);
+
+                    },error: function (request, status, error) {
+                        alert(request.responseText);
+                    }
+                })
+                 $.ajax({
+                    url: "/audio_recognizer_7",
+                    method: "GET",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response.profileId);
+                        $("#recognizer").empty();
+                        $("#recognizer").append(response.profileId);
+
+                    },error: function (request, status, error) {
+                        alert(request.responseText);
+                    }
+                })
+            })
+        //Audio 8
+            $('#audio8').on('click', ()=>{
+                var audio = $('#sequence_8').get(0);
+                audio.paused? audio.play():audio.pause()
+                audio.paused? $('#audio8').text('PLAY'):$('#audio8').text('PAUSE')
+                
+                $.ajax({
+                    url: "/audio_sequence_8",
+                    method: "GET",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response.DisplayText);
+                        $("#speechToText").empty();
+                        $("#speechToText").append(response.DisplayText);
+
+                    },error: function (request, status, error) {
+                        alert(request.responseText);
+                    }
+                })
+                 $.ajax({
+                    url: "/audio_recognizer_8",
+                    method: "GET",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response.profileId);
+                        $("#recognizer").empty();
+                        $("#recognizer").append(response.profileId);
+
+                    },error: function (request, status, error) {
+                        alert(request.responseText);
+                    }
+                })
+            })
+        //Audio 9
+            $('#audio9').on('click', ()=>{
+                var audio = $('#sequence_9').get(0);
+                audio.paused? audio.play():audio.pause()
+                audio.paused? $('#audio9').text('PLAY'):$('#audio9').text('PAUSE')
+                
+                $.ajax({
+                    url: "/audio_sequence_9",
+                    method: "GET",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response.DisplayText);
+                        $("#speechToText").empty();
+                        $("#speechToText").append(response.DisplayText);
+
+                    },error: function (request, status, error) {
+                        alert(request.responseText);
+                    }
+                })
+                 $.ajax({
+                    url: "/audio_recognizer_9",
+                    method: "GET",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response.profileId);
+                        $("#recognizer").empty();
+                        $("#recognizer").append(response.profileId);
+
+                    },error: function (request, status, error) {
+                        alert(request.responseText);
+                    }
+                })
+            })
+        //Audio 10
+            $('#audio10').on('click', ()=>{
+                var audio = $('#sequence_10').get(0);
+                audio.paused? audio.play():audio.pause()
+                audio.paused? $('#audio10').text('PLAY'):$('#audio10').text('PAUSE')
+                
+                $.ajax({
+                    url: "/audio_sequence_10",
+                    method: "GET",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response.DisplayText);
+                        $("#speechToText").empty();
+                        $("#speechToText").append(response.DisplayText);
+
+                    },error: function (request, status, error) {
+                        alert(request.responseText);
+                    }
+                })
+                 $.ajax({
+                    url: "/audio_recognizer_10",
+                    method: "GET",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response.profileId);
+                        $("#recognizer").empty();
+                        $("#recognizer").append(response.profileId);
+
+                    },error: function (request, status, error) {
+                        alert(request.responseText);
                     }
                 })
             })
 
-
-        </script> %>
+        </script> 
