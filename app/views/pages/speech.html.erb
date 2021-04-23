@@ -73,7 +73,7 @@
 
 			<!-- INTRO -->
 			<div class="slider fullwidthbanner-container roundedcorners">
-				<div id="home" class="fullwidthbanner" data-delay="0" data-height="500" data-shadow="0" data-navigationStyle="preview2">
+				<div id="home" class="fullwidthbanner" data-delay="0" data-height="600" data-shadow="0" data-navigationStyle="preview2">
 					<ul class="hide">
 						<li data-transition="parallaxtobottom" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off"  data-title="Our Values">
 							<!-- MAIN IMAGE -->
@@ -106,61 +106,79 @@
                 <div>
                     <center>
                     <!-- audio #1-->
-                        <%= button_to 'AUDIO 1', speech_path, {method: :post, id:"audio1"} %>
+                        <%= button_to 'AUDIO 1', speech_path, {method: :post, id:"audio1", class:"audioFiles", data: "sequence_1"} %>
 
                         <audio id = "sequence_1">
                             <source src="<%= audio_path 'sequence1.wav'%>">
                         </audio>
+
+
                     <!-- audio #2-->
-                        <button class="btn btn-light btn-lg" id="audio2" type="submit">AUDIO 2</button>
+                        <%= button_to 'AUDIO 2', speech_path, {method: :post, id:"audio2", class:"audioFiles", data: "sequence_2"} %>
 
                         <audio id = "sequence_2">
                             <source src="<%= audio_path 'sequence2.wav'%>">
                         </audio>
+
+
                     <!-- audio #3-->
-                        <button class="btn btn-light btn-lg" id="audio3" type="submit">AUDIO 3</button>
+                        <%= button_to 'AUDIO 3', speech_path, {method: :post, id:"audio3", class:"audioFiles", data: "sequence_3"} %>
 
                         <audio id = "sequence_3">
                             <source src="<%= audio_path 'sequence3.wav'%>">
                         </audio>
+
+
                     <!-- audio #4-->
-                        <button class="btn btn-light btn-lg" id="audio4" type="submit">AUDIO 4</button>
+                        <%= button_to 'AUDIO 4', speech_path, {method: :post, id:"audio4", class:"audioFiles", data: "sequence_4"} %>
 
                         <audio id = "sequence_4">
                             <source src="<%= audio_path 'sequence4.wav'%>">
                         </audio>
+
+
                     <!-- audio #5-->
-                        <button class="btn btn-light btn-lg" id="audio5" type="submit">AUDIO 5</button>
+                        <%= button_to 'AUDIO 5', speech_path, {method: :post, id:"audio5", class:"audioFiles", data: "sequence_5"} %>
 
                         <audio id = "sequence_5">
                             <source src="<%= audio_path 'sequence5.wav'%>">
                         </audio>
+
+
                     <!-- audio #6-->
-                        <button class="btn btn-light btn-lg" id="audio6" type="submit">AUDIO 6</button>
+                        <%= button_to 'AUDIO 6', speech_path, {method: :post, id:"audio6", class:"audioFiles", data: "sequence_6"} %>
 
                         <audio id = "sequence_6">
                             <source src="<%= audio_path 'sequence6.wav'%>">
                         </audio>
+
+
                     <!-- audio #7-->
-                        <button class="btn btn-light btn-lg" id="audio7" type="submit">AUDIO 7</button>
+                        <%= button_to 'AUDIO 7', speech_path, {method: :post, id:"audio7", class:"audioFiles", data: "sequence_7"} %>
 
                         <audio id = "sequence_7">
                             <source src="<%= audio_path 'sequence7.wav'%>">
                         </audio>
+
+
                     <!-- audio #8-->
-                        <button class="btn btn-light btn-lg" id="audio8" type="submit">AUDIO 8</button>
+                        <%= button_to 'AUDIO 8', speech_path, {method: :post, id:"audio8", class:"audioFiles", data: "sequence_8"} %>
 
                         <audio id = "sequence_8">
                             <source src="<%= audio_path 'sequence8.wav'%>">
                         </audio>
+
+
                     <!-- audio #9-->
-                        <button class="btn btn-light btn-lg" id="audio9" type="submit">AUDIO 9</button>
+                        <%= button_to 'AUDIO 9', speech_path, {method: :post, id:"audio9", class:"audioFiles", data: "sequence_9"} %>
 
                         <audio id = "sequence_9">
                             <source src="<%= audio_path 'sequence9.wav'%>">
                         </audio>
+
+
                     <!-- audio #10-->
-                        <button class="btn btn-light btn-lg" id="audio10" type="submit">AUDIO 10</button>
+                        <%= button_to 'AUDIO 10', speech_path, {method: :post, id:"audio10", class:"audioFiles", data: "sequence_10"} %>
 
                         <audio id = "sequence_10">
                             <source src="<%= audio_path 'sequence10.wav'%>">
@@ -190,7 +208,7 @@
                 
                     <center>
                         <div class="col-md-6">
-							<textarea required maxlength="10000" rows="5" class="form-control" id="speechToText" name="speech_to_text" readonly></textarea>
+							<textarea required maxlength="10000" rows="5" class="form-control" id="speechToText" name="speechToText" readonly></textarea>
 						</div>
                     </center>
                 <!-- /SPEECH TO TEXT -->
@@ -266,25 +284,28 @@
 		<!-- SCROLL TO TOP -->
 		<a href="#" id="toTop"></a>
 
-        <script>
-            $('#audio1').on('click', ()=>{
-                var audio = $('#sequence_1').get(0);
+        <script>            
+            $('.audioFiles').on('click', (e)=>{
+
+                audio_id = $(e.currentTarget).attr('data')
+                
+                var audio = $('#' + audio_id).get(0);
                 audio.paused? audio.play():audio.pause()
-                audio.paused? $('#audio1').text('PLAY'):$('#audio1').text('PAUSE')
+                // audio.paused? $('#audio1').text('PLAY'):$('#audio1').text('PAUSE')
 
-                $.ajax({
-                    url:"/speech_to_text",
-                    method: "GET",
-                    error: function (xhr, status, error) {
-                    console.error('AJAX Error: ' + status + error);
-                    },
-                    success: function (response) {
+                // $.ajax({
+                //     url:"/speech_to_text",
+                //     method: "GET",
+                //     error: function (xhr, status, error) {
+                //     console.error('AJAX Error: ' + status + error);
+                //     },
+                //     success: function (response) {
 
-                    console.log("Response: ", response);
-                    // $('#speechToText').append()
-                    }
-                })
+                //     console.log("Response: ", response);
+                //     // $('#speechToText').append()
+                //     }
+                // })
             })
-
-
         </script>
+    </div>
+</div>

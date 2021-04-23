@@ -1,8 +1,9 @@
 require 'json'
 require 'net/http'
 require 'openssl'
+
+
 class SpeechController < ApplicationController
-    
     
     def speech 
         @output = "test123"
