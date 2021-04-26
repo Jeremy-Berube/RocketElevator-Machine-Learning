@@ -11,7 +11,7 @@
 ---------------------------------------------------------------------------------------------------------------
 
 
- ![](app/assets/audios/Etienne_en.wav)
+All the audio file used during this project are in app/assets/audios
 
 
 
